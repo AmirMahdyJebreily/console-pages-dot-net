@@ -1,4 +1,4 @@
-﻿namespace ConsolePages.Models
+﻿namespace ConsolePages
 {
     public interface IPage
     {

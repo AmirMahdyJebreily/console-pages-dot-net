@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace ConsolePages.Models.App.Interfaces
+namespace ConsolePages
 {
     /// <summary>
     /// Base of color themes in application

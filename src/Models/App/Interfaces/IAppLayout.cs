@@ -1,4 +1,4 @@
-﻿namespace ConsolePages.Models.App.Interfaces
+﻿namespace ConsolePages
 {
     /// <summary>
     /// Base of content layouts
