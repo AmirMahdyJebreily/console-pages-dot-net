@@ -2,6 +2,9 @@
 
 namespace ConsolePages.Models.App.Interfaces
 {
+    /// <summary>
+    /// Base of color themes in application
+    /// </summary>
     public interface IColorTheme
     {
         public Color PrimeryColor { get; set; }
