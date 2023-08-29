@@ -1,5 +1,4 @@
 ﻿using System;
-using ConsolePages.Models.App.Interfaces;
 
 namespace ConsolePages
 {

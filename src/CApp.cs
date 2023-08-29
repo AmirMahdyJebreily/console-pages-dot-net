@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using ConsolePages.Models;
-using ConsolePages.Models.App.Interfaces;
 
 namespace ConsolePages
 {
