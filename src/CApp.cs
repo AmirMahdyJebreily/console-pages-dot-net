@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using ConsolePages.Models;
+using ConsolePages.Models.App.Interfaces;
 
 namespace ConsolePages
 {
@@ -11,6 +12,7 @@ namespace ConsolePages
         #region Fields
         private List<IPage> _pages;
         private string _title;
+        private IAppContentLayout _layout;
         //...
         #endregion
 
@@ -24,6 +26,12 @@ namespace ConsolePages
         /// Your console apps' Pages
         /// </summary>
         public List<IPage> Pages => _pages;
+
+        /// <summary>
+        /// contents layout of the app
+        /// </summary>
+        public IAppContentLayout Layout => _layout;
+
         //...
         #endregion
     }
