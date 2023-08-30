@@ -31,7 +31,6 @@ namespace ConsolePages
             );
 
 
-        // TODO : for whene Impliment IColorTheme Interface :
-        internal static IColorTheme _dflt_color_theme;
+        internal static IColorTheme _dflt_color_theme = new ColorTheme();
     }
 }
