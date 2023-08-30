@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace ConsolePages
 {
@@ -25,7 +26,9 @@ namespace ConsolePages
         internal static IColorTheme _theme = _dflt_color_theme;
 
 
-        // TODO : Add layout field as default layout
+        internal static IAppContentLayout _dflt_app_cntnt_lyot = new AppLayout(
+                ("Wellcome to my program", Color.Fuchsia)
+            );
 
 
         // TODO : for whene Impliment IColorTheme Interface :

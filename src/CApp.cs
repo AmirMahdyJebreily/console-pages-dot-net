@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Reflection;
 
 namespace ConsolePages
 {
@@ -31,6 +32,15 @@ namespace ConsolePages
         public IAppContentLayout Layout => _layout;
 
         //...
+        #endregion
+
+        #region Constructors
+        public CApp()
+        {
+            _pages = new List<IPage>();
+            _layout = _prvt_sttc._dflt_app_cntnt_lyot;
+            _title = Assembly.GetCallingAssembly().GetName().Name;
+        }
         #endregion
     }
 }
