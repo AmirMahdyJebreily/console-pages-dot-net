@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
-
-namespace ConsolePages
+﻿namespace ConsolePages
 {
     /// <summary>
     /// Base of content layouts
@@ -11,6 +8,6 @@ namespace ConsolePages
         /// <summary>
         /// Header of contents, print on top of contents
         /// </summary>
-        public ConsoleString HeadOfContects { get; }
+        public ConsoleContent HeadOfContects { get; }
     }
 }

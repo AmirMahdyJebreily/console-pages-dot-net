@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Text;
+﻿using System.Drawing;
 
 namespace ConsolePages
 {
+    /// <summary>
+    /// Color theme of printed texts in console page
+    /// </summary>
     public class ColorTheme : IColorTheme
     {
         public Color PrimeryColor { get; set; }
@@ -13,7 +13,9 @@ namespace ConsolePages
         public Color ErrorColor { get; set; }
         public Color SuccessColor { get; set; }
 
-
+        /// <summary>
+        /// Default constructor, provide default color theme
+        /// </summary>
         public ColorTheme()
         {
             PrimeryColor = Color.White;

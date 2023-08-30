@@ -25,12 +25,16 @@ namespace ConsolePages
         /// </summary>
         internal static IColorTheme _theme = _dflt_color_theme;
 
-
+        /// <summary>
+        /// default layout of pages
+        /// </summary>
         internal static IAppContentLayout _dflt_app_cntnt_lyot = new AppLayout(
                 ("Wellcome to my program", Color.Fuchsia)
             );
 
-
+        /// <summary>
+        /// default color theme
+        /// </summary>
         internal static IColorTheme _dflt_color_theme = new ColorTheme();
     }
 }

@@ -2,10 +2,13 @@
 
 namespace ConsolePages
 {
+    /// <summary>
+    /// default layout of app 
+    /// </summary>
     public class AppLayout : IAppContentLayout
     {
-        private ConsoleString _head_of_content;
-        public ConsoleString HeadOfContects => _head_of_content;
+        private ConsoleContent _head_of_content;
+        public ConsoleContent HeadOfContects => _head_of_content;
 
         public AppLayout(params (string, Color?)[] texts)
         {

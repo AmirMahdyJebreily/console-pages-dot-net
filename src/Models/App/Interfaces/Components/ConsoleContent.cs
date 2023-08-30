@@ -4,21 +4,34 @@ using System.Linq;
 
 namespace ConsolePages
 {
-    public class ConsoleString
+    /// <summary>
+    /// Format for all contents
+    /// </summary>
+    public class ConsoleContent
     {
         private List<TextPart> _content;
 
+        /// <summary>
+        /// Text data of this content
+        /// </summary>
         public List<TextPart> Content => _content;
 
-        public ConsoleString() { }
-        public ConsoleString(string jsonFormat) { }
+        public ConsoleContent() { }
 
 
+        /// <summary>
+        /// write a text in content
+        /// </summary>
+        /// <param name="line"><see cref="TextPart"/> format input for write in content</param>
         public void writeContent(TextPart line)
         {
             _content.Add(line);
         }
 
+        /// <summary>
+        /// Write multiple texts in the content
+        /// </summary>
+        /// <param name="lines">list of <see cref="TextPart"/> format input for write in content</param>
         public void writeContent(List<TextPart> lines)
         {
             lines.ForEach(l =>
