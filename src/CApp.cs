@@ -9,7 +9,7 @@ namespace ConsolePages
     public class CApp
     {
         #region Fields
-        private IPage _page_model;
+        private List<IPage> _pages;
         private string _title;
         private IAppContentLayout _layout;
         //...
@@ -24,7 +24,7 @@ namespace ConsolePages
         /// <summary>
         /// Your console apps' Pages
         /// </summary>
-        public IPage InLinePage => _page_model;
+        public List<IPage> Pages => _pages;
 
         /// <summary>
         /// contents layout of the app
@@ -37,8 +37,8 @@ namespace ConsolePages
         #region Constructors
         public CApp()
         {
+            _pages = new List<IPage>();
             _layout = _prvt_sttc._dflt_app_cntnt_lyot;
-            _page_model = new Page(_layout);
             _title = Assembly.GetCallingAssembly().GetName().Name;
         }
         #endregion
