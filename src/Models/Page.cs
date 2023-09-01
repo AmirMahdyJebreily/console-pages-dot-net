@@ -1,4 +1,6 @@
-﻿namespace ConsolePages
+﻿using System;
+
+namespace ConsolePages
 {
     public class Page : IPage
     {
@@ -17,5 +19,11 @@
             _layout = layout;
         }
         #endregion
+
+        public static Page ShowPage(Action action)
+        {
+
+            action();
+        }
     }
 }

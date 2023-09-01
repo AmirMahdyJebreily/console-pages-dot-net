@@ -8,22 +8,22 @@ namespace ConsolePages
         /// <summary>
         /// print method delegate
         /// </summary>
-        internal static Action<object> _prnt_mtd;
+        internal static Action _prnt_mtd;
 
         /// <summary>
         /// print + new line method delegate
         /// </summary>
-        internal static Action<object> _prntln_mtd;
+        internal static Action _prntln_mtd;
 
         /// <summary>
         /// change color methode
         /// </summary>
-        internal static Action<object> _chng_color_mtd;
+        internal static Action _chng_color_mtd;
 
         /// <summary>
         /// clean method delegate
         /// </summary>
-        internal static Action<object> _cln_mtd;
+        internal static Action _cln_mtd;
 
         /// <summary>
         /// color theme object
