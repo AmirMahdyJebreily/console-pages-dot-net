@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Linq;
 
 namespace ConsolePages
 {
@@ -7,12 +8,12 @@ namespace ConsolePages
     /// </summary>
     public class AppLayout : IAppContentLayout
     {
-        private ConsoleContent _head_of_content;
-        public ConsoleContent HeadOfContects => _head_of_content;
+        private string _head_of_content;
+        public string HeadOfContents => _head_of_content;
 
         public AppLayout(params (string, Color?)[] texts)
         {
-            _head_of_content.writeContent(texts);
+            
         }
 
     }

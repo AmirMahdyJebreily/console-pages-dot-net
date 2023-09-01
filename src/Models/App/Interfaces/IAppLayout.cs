@@ -8,6 +8,6 @@
         /// <summary>
         /// Header of contents, print on top of contents
         /// </summary>
-        public ConsoleContent HeadOfContects { get; }
+        public string HeadOfContents { get; }
     }
 }
