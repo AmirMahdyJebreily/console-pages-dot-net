@@ -4,8 +4,8 @@ namespace ConsolePages
 {
     public class PagesArgs
     {
-        private Action<object> _print = _prvt_sttc._prntln_mtd;
-        private Action<object> _print_nl = _prvt_sttc._prnt_mtd;
+        private Action<object> _print = _prvt_sttc._prnt_mtd;
+        private Action<object> _print_nl = _prvt_sttc._prntln_mtd;
         private Action<ConsoleColor> _ch_color = _prvt_sttc._chng_color_mtd;
         private Action _clear = _prvt_sttc._cln_mtd;
         private ColorTheme _theme = _prvt_sttc._dflt_color_theme;

@@ -1,4 +1,4 @@
-﻿using ConsolePages.Models.Pages;
+﻿using ConsolePages;
 using System;
 
 namespace ConsolePages
