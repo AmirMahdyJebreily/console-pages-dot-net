@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsolePages.Models.Pages;
+using System;
 using System.Drawing;
 
 namespace ConsolePages
@@ -8,22 +9,22 @@ namespace ConsolePages
         /// <summary>
         /// print method delegate
         /// </summary>
-        internal static Action _prnt_mtd;
+        internal static Action<PagesArgs> _prnt_mtd;
 
         /// <summary>
         /// print + new line method delegate
         /// </summary>
-        internal static Action _prntln_mtd;
+        internal static Action<PagesArgs> _prntln_mtd;
 
         /// <summary>
         /// change color methode
         /// </summary>
-        internal static Action _chng_color_mtd;
+        internal static Action<PagesArgs> _chng_color_mtd;
 
         /// <summary>
         /// clean method delegate
         /// </summary>
-        internal static Action _cln_mtd;
+        internal static Action<PagesArgs> _cln_mtd;
 
         /// <summary>
         /// color theme object
@@ -40,6 +41,6 @@ namespace ConsolePages
         /// <summary>
         /// default color theme
         /// </summary>
-        internal static IColorTheme _dflt_color_theme = new ColorTheme();
+        internal static ColorTheme _dflt_color_theme = new ColorTheme();
     }
 }

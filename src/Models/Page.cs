@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsolePages.Models.Pages;
+using System;
 
 namespace ConsolePages
 {
@@ -6,11 +7,12 @@ namespace ConsolePages
     {
         #region Private Fields
         private IAppContentLayout _layout = _prvt_sttc._dflt_app_cntnt_lyot;
+        private Action<PagesArgs>? _dialog_stream;
         #endregion
 
         #region Public Properties
         public IAppContentLayout ContentLayout => _layout;
-        public string MainContent { get; set; }
+        public Action<PagesArgs>? DialogStream => _dialog_stream;
         #endregion
 
         #region Constructor(s)
@@ -20,10 +22,16 @@ namespace ConsolePages
         }
         #endregion
 
-        public static Page ShowPage(Action action)
-        {
 
-            action();
+        public void DefineDialog(Action<PagesArgs> action)
+        {
+            _dialog_stream = action;
+        }
+
+        public void Show()
+        {
+            PagesArgs args = new PagesArgs();
+            this.DialogStream.Invoke(args);
         }
     }
 }

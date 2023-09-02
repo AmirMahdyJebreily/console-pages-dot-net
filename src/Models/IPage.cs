@@ -1,4 +1,7 @@
-﻿namespace ConsolePages
+﻿using ConsolePages.Models.Pages;
+using System;
+
+namespace ConsolePages
 {
     /// <summary>
     /// base of all pages
@@ -13,6 +16,6 @@
         /// <summary>
         /// Main text content of this page
         /// </summary>
-        string MainContent { get; set; }
+        Action<PagesArgs> DialogStream { get; }
     }
 }

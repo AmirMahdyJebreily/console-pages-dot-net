@@ -24,7 +24,7 @@ namespace ConsolePages
         /// <summary>
         /// Your console apps' Pages
         /// </summary>
-        public IPage Pages => _page;
+        public IPage Page => _page;
 
         /// <summary>
         /// contents layout of the app
