@@ -33,5 +33,9 @@ namespace ConsolePages
         /// </summary>
         public ConsoleColor SuccessColor { get; set; }
 
+        /// <summary>
+        /// Deafult color for information messages
+        /// </summary>
+        public ConsoleColor InformationColor { get; set; }
     }
 }

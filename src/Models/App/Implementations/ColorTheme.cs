@@ -13,6 +13,7 @@ namespace ConsolePages
         public ConsoleColor WarningColor { get; set; }
         public ConsoleColor ErrorColor { get; set; }
         public ConsoleColor SuccessColor { get; set; }
+        public ConsoleColor InformationColor { get; set; }
 
         /// <summary>
         /// Default constructor, provide default color theme
@@ -24,51 +25,67 @@ namespace ConsolePages
             WarningColor = ConsoleColor.Yellow;
             ErrorColor = ConsoleColor.Red;
             SuccessColor = ConsoleColor.Green;
+            InformationColor = ConsoleColor.DarkBlue;
         }
 
 
-        public ColorTheme(Color primeryColor)
+        public ColorTheme(ConsoleColor primeryColor)
         {
             PrimeryColor = primeryColor;
-            SecondColor = Color.FromArgb(255, 241, 233);
-            WarningColor = Color.FromArgb(214, 153, 39);
-            ErrorColor = Color.FromArgb(238, 130, 159);
-            SuccessColor = Color.FromArgb(89, 213, 153);
+            SecondColor = ConsoleColor.DarkGray;
+            WarningColor = ConsoleColor.Yellow;
+            ErrorColor = ConsoleColor.Red;
+            SuccessColor = ConsoleColor.Green;
+            InformationColor = ConsoleColor.DarkBlue;
         }
-        public ColorTheme(Color primeryColor, Color secondColor)
+        public ColorTheme(ConsoleColor primeryColor, ConsoleColor secondColor)
         {
             PrimeryColor = primeryColor;
             SecondColor = secondColor;
-            WarningColor = Color.FromArgb(214, 153, 39);
-            ErrorColor = Color.FromArgb(238, 130, 159);
-            SuccessColor = Color.FromArgb(89, 213, 153);
+            WarningColor = ConsoleColor.Yellow;
+            ErrorColor = ConsoleColor.Red;
+            SuccessColor = ConsoleColor.Green;
+            InformationColor = ConsoleColor.DarkBlue;
         }
 
-        public ColorTheme(Color primeryColor, Color secondColor, Color warningColor)
+        public ColorTheme(ConsoleColor primeryColor, ConsoleColor secondColor, ConsoleColor warningColor)
         {
             PrimeryColor = primeryColor;
             SecondColor = secondColor;
             WarningColor = warningColor;
-            ErrorColor = Color.FromArgb(238, 130, 159);
-            SuccessColor = Color.FromArgb(89, 213, 153);
+            ErrorColor = ConsoleColor.Red;
+            SuccessColor = ConsoleColor.Green;
+            InformationColor = ConsoleColor.DarkBlue;
         }
 
-        public ColorTheme(Color primeryColor, Color secondColor, Color warningColor, Color errorColor)
+        public ColorTheme(ConsoleColor primeryColor, ConsoleColor secondColor, ConsoleColor warningColor, ConsoleColor errorColor)
         {
             PrimeryColor = primeryColor;
             SecondColor = secondColor;
             WarningColor = warningColor;
             ErrorColor = errorColor;
-            SuccessColor = Color.FromArgb(89, 213, 153);
+            SuccessColor = ConsoleColor.Green;
+            InformationColor = ConsoleColor.DarkBlue;
         }
 
-        public ColorTheme(Color primeryColor, Color secondColor, Color warningColor, Color errorColor, Color successColor)
+        public ColorTheme(ConsoleColor primeryColor, ConsoleColor secondColor, ConsoleColor warningColor, ConsoleColor errorColor, ConsoleColor successColor)
         {
             PrimeryColor = primeryColor;
             SecondColor = secondColor;
             WarningColor = warningColor;
             ErrorColor = errorColor;
             SuccessColor = successColor;
+            InformationColor = ConsoleColor.DarkBlue;
+        }
+
+        public ColorTheme(ConsoleColor primeryColor, ConsoleColor secondColor, ConsoleColor warningColor, ConsoleColor errorColor, ConsoleColor successColor, ConsoleColor infoColor)
+        {
+            PrimeryColor = primeryColor;
+            SecondColor = secondColor;
+            WarningColor = warningColor;
+            ErrorColor = errorColor;
+            SuccessColor = successColor;
+            InformationColor = infoColor;
         }
 
     }
