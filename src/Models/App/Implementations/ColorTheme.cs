@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace ConsolePages
 {
@@ -7,22 +8,22 @@ namespace ConsolePages
     /// </summary>
     public class ColorTheme : IColorTheme
     {
-        public Color PrimeryColor { get; set; }
-        public Color SecondColor { get; set; }
-        public Color WarningColor { get; set; }
-        public Color ErrorColor { get; set; }
-        public Color SuccessColor { get; set; }
+        public ConsoleColor PrimeryColor { get; set; }
+        public ConsoleColor SecondColor { get; set; }
+        public ConsoleColor WarningColor { get; set; }
+        public ConsoleColor ErrorColor { get; set; }
+        public ConsoleColor SuccessColor { get; set; }
 
         /// <summary>
         /// Default constructor, provide default color theme
         /// </summary>
         public ColorTheme()
         {
-            PrimeryColor = Color.White;
-            SecondColor = Color.FromArgb(255, 241, 233);
-            WarningColor = Color.FromArgb(214, 153, 39);
-            ErrorColor = Color.FromArgb(238, 130, 159);
-            SuccessColor = Color.FromArgb(89, 213, 153);
+            PrimeryColor = ConsoleColor.Gray;
+            SecondColor = ConsoleColor.DarkGray;
+            WarningColor = ConsoleColor.Yellow;
+            ErrorColor = ConsoleColor.Red;
+            SuccessColor = ConsoleColor.Green;
         }
 
 

@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace ConsolePages
 {
@@ -10,27 +11,27 @@ namespace ConsolePages
         /// <summary>
         /// Default color for texts
         /// </summary>
-        public Color PrimeryColor { get; set; }
+        public ConsoleColor PrimeryColor { get; set; }
 
         /// <summary>
         /// Default color for extra chracters
         /// </summary>
-        public Color SecondColor { get; set; }
+        public ConsoleColor SecondColor { get; set; }
 
         /// <summary>
         /// Default color for warning messges
         /// </summary>
-        public Color WarningColor { get; set; }
+        public ConsoleColor WarningColor { get; set; }
 
         /// <summary>
         /// Default color for error messages in console
         /// </summary>
-        public Color ErrorColor { get; set; }
+        public ConsoleColor ErrorColor { get; set; }
 
         /// <summary>
         /// Deafult color for success messages
         /// </summary>
-        public Color SuccessColor { get; set; }
+        public ConsoleColor SuccessColor { get; set; }
 
     }
 }
