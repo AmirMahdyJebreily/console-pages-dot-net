@@ -65,10 +65,10 @@ namespace ConsolePages
             _ch_color(_theme.PrimeryColor);
 
         }
-        public void PrintLn(string sep = "\n", params string[] texts) => Print(string.Join(sep, texts));
+        public void PrintLn(string[] texts, string sep = "\n") => Print(string.Join(sep, texts));
         public void PrintLn(params string[] texts) => Print(string.Join("\n", texts));
 
-        public void PrintLn(string sep = "\n", params (string, ConsoleColor)[] texts)
+        public void PrintLn((string, ConsoleColor)[] texts, string sep = "\n")
         {
             for (int i = 0; i < texts.Length; i++)
             {
