@@ -17,11 +17,12 @@ namespace ConsolePages
         public void Print(string text, ConsoleColor color)
         {
             _ch_color(color);
-            _print(text); 
+            _print(text);
             _ch_color(_theme.PrimeryColor);
 
         }
         public void Print(string sep = " ", params string[] texts) => Print(string.Join(sep, texts));
+        public void Print(params string[] texts) => Print(string.Join(" ", texts));
         public void Print(string sep = " ", params (string, ConsoleColor)[] texts)
         {
             for (int i = 0; i < texts.Length; i++)
@@ -33,6 +34,21 @@ namespace ConsolePages
                 if (i + 1 != texts.Length)
                 {
                     Print(sep); // add seprator to texts
+                }
+
+            }
+        }
+        public void Print(params (string, ConsoleColor)[] texts)
+        {
+            for (int i = 0; i < texts.Length; i++)
+            {
+                _ch_color(texts[i].Item2);
+                Print(texts[i].Item1);
+                _ch_color(_theme.PrimeryColor);
+
+                if (i + 1 != texts.Length)
+                {
+                    Print(" "); // add seprator to texts
                 }
 
             }
@@ -50,6 +66,8 @@ namespace ConsolePages
 
         }
         public void PrintLn(string sep = "\n", params string[] texts) => Print(string.Join(sep, texts));
+        public void PrintLn(params string[] texts) => Print(string.Join("\n", texts));
+
         public void PrintLn(string sep = "\n", params (string, ConsoleColor)[] texts)
         {
             for (int i = 0; i < texts.Length; i++)
@@ -61,6 +79,22 @@ namespace ConsolePages
                 if (i + 1 != texts.Length)
                 {
                     Print(sep); // add seprator to texts
+                }
+
+            }
+        }
+
+        public void PrintLn(params (string, ConsoleColor)[] texts)
+        {
+            for (int i = 0; i < texts.Length; i++)
+            {
+                _ch_color(texts[i].Item2);
+                Print(texts[i].Item1);
+                _ch_color(_theme.PrimeryColor);
+
+                if (i + 1 != texts.Length)
+                {
+                    Print("\n"); // add seprator to texts
                 }
 
             }
