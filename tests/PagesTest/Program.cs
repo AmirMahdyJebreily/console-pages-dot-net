@@ -6,8 +6,7 @@ Page p = new Page(cApp.Layout);
 
 p.DefineDialog((args) =>
 {
-    args.Print("Hello World");
-    args.PrintLn("Hello World", "Fuck");
+    args.Print(("[Error]",args.Theme.ErrorColor), ("an error occurred in code...", args.Theme.PrimeryColor));
 });
 
 p.Show();
