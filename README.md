@@ -1,6 +1,7 @@
 # console-pages-dot-net
 a lite weight library for create daynamic console applications in dotnet
 
+new syntax :
 ```csharp
 using ConsolePages;
 
@@ -13,7 +14,10 @@ cApp.ShowPage(new Page(cApp.Layout, (a) =>
     a.Print(("[Info]", a.InfoColor), ("App version is 0.0.1 ...", a.PrimeColor));
     a.Print(("You have", a.PrimeColor), ("12$", a.InfoColor), ("in your wallet",a.PrimeColor));
 }));
+```
 
+old syntax : 
+```csharp
 // --------------{ ConsolePages Format ⬆️ }------{ Console Format ⬇ }----------------
 
 Console.ForegroundColor = ConsoleColor.Red;
@@ -38,3 +42,6 @@ Console.Write(" 12$ ");
 Console.ResetColor();
 Console.WriteLine("in your wallet");
 ```
+
+for this result : 
+
