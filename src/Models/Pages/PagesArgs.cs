@@ -9,8 +9,6 @@ namespace ConsolePages
         private Action _clear = _prvt_sttc._cln_mtd;
         private ColorTheme _theme = _prvt_sttc._dflt_color_theme;
 
-
-
         #region Print Method
         public void Print(object obj) => _print(obj);
         public void Print(string text) => _print(text);
@@ -102,7 +100,17 @@ namespace ConsolePages
         #endregion
 
         public Action Clear => _clear;
+
+        #region Colors of Theme
         public ColorTheme Theme => _theme;
+
+        public ConsoleColor PrimeryColor => _theme.PrimeryColor;
+        public ConsoleColor SecondColor => _theme.SecondColor;
+        public ConsoleColor WarningColor => _theme.WarningColor;
+        public ConsoleColor ErrorColor => _theme.ErrorColor;
+        public ConsoleColor SuccessColor => _theme.SuccessColor;
+        public ConsoleColor InformationColor => _theme.InformationColor;
+        #endregion
 
         public PagesArgs() { }
 
