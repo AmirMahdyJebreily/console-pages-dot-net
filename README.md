@@ -16,10 +16,9 @@ cApp.ShowPage(new Page(cApp.Layout, (a) =>
 }));
 ```
 
-old syntax : 
-```csharp
-// --------------{ ConsolePages Format ⬆️ }------{ Console Format ⬇ }----------------
+old syntax (in dotnet) : 
 
+```csharp
 Console.ForegroundColor = ConsoleColor.Red;
 Console.Write("[Error]");
 Console.ResetColor();
@@ -44,4 +43,4 @@ Console.WriteLine("in your wallet");
 ```
 
 for this result : 
-
+![result a simple code in console pages](./docs/Images/res.png)
