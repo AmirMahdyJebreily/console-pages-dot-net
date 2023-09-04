@@ -42,5 +42,5 @@ Console.ResetColor();
 Console.WriteLine("in your wallet");
 ```
 
-for this result : 
+for this result :   
 ![result a simple code in console pages](./docs/Images/res.png)
