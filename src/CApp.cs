@@ -41,6 +41,12 @@ namespace ConsolePages
             _layout = _prvt_sttc._dflt_app_cntnt_lyot;
             _page = new Page(_layout);
         }
+
         #endregion
+
+        public void ShowPage(IPage page)
+        {
+            _page = page.Show();
+        }
     }
 }

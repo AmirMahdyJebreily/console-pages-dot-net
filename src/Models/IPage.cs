@@ -17,5 +17,7 @@ namespace ConsolePages
         /// Main text content of this page
         /// </summary>
         Action<PagesArgs> DialogStream { get; }
+
+        IPage Show();
     }
 }

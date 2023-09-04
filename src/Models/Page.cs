@@ -34,10 +34,10 @@ namespace ConsolePages
             _dialog_stream = dialogStream;
         }
 
-        public void Show()
+        public IPage Show()
         {
-            PagesArgs args = new PagesArgs();
-            this.DialogStream.Invoke(args);
+            this.DialogStream.Invoke(new PagesArgs());
+            return this;
         }
     }
 }
