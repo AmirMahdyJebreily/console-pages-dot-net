@@ -19,9 +19,9 @@ namespace ConsolePages
             _ch_color(_theme.PrimeryColor);
 
         }
-        public void PrintNl(string sep = " ", params string[] texts) => PrintNl(string.Join(sep, texts));
-        public void PrintNl(params string[] texts) => PrintNl(string.Join(" ", texts));
-        public void PrintNl(string sep = " ", params (string, ConsoleColor)[] texts)
+        public void PrintNl(string sep = "\u0020", params string[] texts) => PrintNl(string.Join(sep, texts));
+        public void PrintNl(params string[] texts) => PrintNl(string.Join("\u0020", texts));
+        public void PrintNl(string sep = "\u0020", params (string, ConsoleColor)[] texts)
         {
             for (int i = 0; i < texts.Length; i++)
             {
@@ -46,7 +46,7 @@ namespace ConsolePages
 
                 if (i + 1 != texts.Length)
                 {
-                    PrintNl(" "); // add seprator to texts
+                    PrintNl("\u0020"); // add seprator to texts
                 }
 
             }
@@ -78,7 +78,6 @@ namespace ConsolePages
                 {
                     PrintNl(sep); // add seprator to texts
                 }
-
             }
         }
 
@@ -92,10 +91,11 @@ namespace ConsolePages
 
                 if (i + 1 != texts.Length)
                 {
-                    PrintNl("\n"); // add seprator to texts
+                    PrintNl("\u0020"); // add seprator to texts
                 }
 
             }
+            PrintNl('\n');
         }
         #endregion
 
@@ -104,12 +104,12 @@ namespace ConsolePages
         #region Colors of Theme
         public ColorTheme Theme => _theme;
 
-        public ConsoleColor PrimeryColor => _theme.PrimeryColor;
+        public ConsoleColor PrimeColor => _theme.PrimeryColor;
         public ConsoleColor SecondColor => _theme.SecondColor;
         public ConsoleColor WarningColor => _theme.WarningColor;
         public ConsoleColor ErrorColor => _theme.ErrorColor;
         public ConsoleColor SuccessColor => _theme.SuccessColor;
-        public ConsoleColor InformationColor => _theme.InformationColor;
+        public ConsoleColor InfoColor => _theme.InformationColor;
         #endregion
 
         public PagesArgs() { }
