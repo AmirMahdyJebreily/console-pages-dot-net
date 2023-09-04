@@ -20,12 +20,18 @@ namespace ConsolePages
         {
             _layout = layout;
         }
+
+        public Page(IAppContentLayout layout, Action<PagesArgs> dialogStream)
+        {
+            _layout = layout;
+            DefineDialog(dialogStream);
+        }
         #endregion
 
 
-        public void DefineDialog(Action<PagesArgs> action)
+        public void DefineDialog(Action<PagesArgs> dialogStream)
         {
-            _dialog_stream = action;
+            _dialog_stream = dialogStream;
         }
 
         public void Show()
