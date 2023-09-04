@@ -67,6 +67,33 @@ namespace ConsolePages
 
             }
         }
+
+        public void PrintNl(params object[] items)
+        {
+            (string, ConsoleColor?)[] res = new (string, ConsoleColor?)[items.Length];
+            for (int i = 0; i < items.Length; i++)
+            {
+                string strValue = string.Empty;
+                ConsoleColor? color = null;
+
+                var item = items[i];
+
+                if (item.GetType() == typeof((string, ConsoleColor)))
+                {
+                    strValue = (((string, ConsoleColor))item).Item1;
+                    color = (((string, ConsoleColor))item).Item2;
+                }
+                else
+                {
+                    strValue = items[i].ToString();
+                }
+
+                res[i] = (strValue, color);
+            }
+            PrintNl(res);
+        }
+
+
         #endregion
 
         #region Print Method
