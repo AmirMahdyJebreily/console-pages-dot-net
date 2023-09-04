@@ -25,7 +25,7 @@ namespace ConsolePages
             WarningColor = ConsoleColor.Yellow;
             ErrorColor = ConsoleColor.Red;
             SuccessColor = ConsoleColor.Green;
-            InformationColor = ConsoleColor.DarkBlue;
+            InformationColor = ConsoleColor.DarkCyan;
         }
 
 

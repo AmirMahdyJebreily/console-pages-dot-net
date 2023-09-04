@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Linq;
 
 namespace ConsolePages
 {
+
     public class PagesArgs
     {
         private Action<object> _print = _prvt_sttc._prnt_mtd;
@@ -21,11 +23,18 @@ namespace ConsolePages
         }
         public void PrintNl(string sep = "\u0020", params string[] texts) => PrintNl(string.Join(sep, texts));
         public void PrintNl(params string[] texts) => PrintNl(string.Join("\u0020", texts));
-        public void PrintNl(string sep = "\u0020", params (string, ConsoleColor)[] texts)
+        public void PrintNl(string sep = "\u0020", params (string, ConsoleColor?)[] texts)
         {
             for (int i = 0; i < texts.Length; i++)
             {
-                _ch_color(texts[i].Item2);
+                if (texts[i].Item2 == null)
+                {
+                    _ch_color(_theme.PrimeryColor);
+                }
+                else
+                {
+                    _ch_color(texts[i].Item2.Value);
+                }
                 PrintNl(texts[i].Item1);
                 _ch_color(_theme.PrimeryColor);
 
@@ -36,11 +45,18 @@ namespace ConsolePages
 
             }
         }
-        public void PrintNl(params (string, ConsoleColor)[] texts)
+        public void PrintNl(params (string, ConsoleColor?)[] texts)
         {
             for (int i = 0; i < texts.Length; i++)
             {
-                _ch_color(texts[i].Item2);
+                if (texts[i].Item2 == null)
+                {
+                    _ch_color(_theme.PrimeryColor);
+                }
+                else
+                {
+                    _ch_color(texts[i].Item2.Value);
+                }
                 PrintNl(texts[i].Item1);
                 _ch_color(_theme.PrimeryColor);
 
@@ -66,11 +82,18 @@ namespace ConsolePages
         public void Print(string[] texts, string sep = "\n") => PrintNl(string.Join(sep, texts));
         public void Print(params string[] texts) => PrintNl(string.Join("\n", texts));
 
-        public void Print((string, ConsoleColor)[] texts, string sep = "\n")
+        public void Print((string, ConsoleColor?)[] texts, string sep = "\n")
         {
             for (int i = 0; i < texts.Length; i++)
             {
-                _ch_color(texts[i].Item2);
+                if (texts[i].Item2 == null)
+                {
+                    _ch_color(_theme.PrimeryColor);
+                }
+                else
+                {
+                    _ch_color(texts[i].Item2.Value);
+                }
                 PrintNl(texts[i].Item1);
                 _ch_color(_theme.PrimeryColor);
 
@@ -81,11 +104,18 @@ namespace ConsolePages
             }
         }
 
-        public void Print(params (string, ConsoleColor)[] texts)
+        public void Print(params (string, ConsoleColor?)[] texts)
         {
             for (int i = 0; i < texts.Length; i++)
             {
-                _ch_color(texts[i].Item2);
+                if (texts[i].Item2 == null)
+                {
+                    _ch_color(_theme.PrimeryColor);
+                }
+                else
+                {
+                    _ch_color(texts[i].Item2.Value);
+                }
                 PrintNl(texts[i].Item1);
                 _ch_color(_theme.PrimeryColor);
 
@@ -96,6 +126,30 @@ namespace ConsolePages
 
             }
             PrintNl('\n');
+        }
+        public void Print(params object[] items)
+        {
+            (string, ConsoleColor?)[] res = new (string, ConsoleColor?)[items.Length];
+            for (int i = 0; i < items.Length; i++)
+            {
+                string strValue = string.Empty;
+                ConsoleColor? color = null;
+
+                var item = items[i];
+
+                if (item.GetType() == typeof((string, ConsoleColor)))
+                {
+                    strValue = (((string, ConsoleColor))item).Item1;
+                    color = (((string, ConsoleColor))item).Item2;
+                }
+                else
+                {
+                    strValue = items[i].ToString();
+                }
+
+                res[i] = (strValue, color);
+            }
+            Print(res);
         }
         #endregion
 
