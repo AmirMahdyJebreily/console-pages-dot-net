@@ -27,7 +27,6 @@ namespace ConsolePages
         }
         #endregion
 
-
         public void DefineDialog(Action<DialogStream> dialogStream)
         {
             _dialog_stream = dialogStream;
