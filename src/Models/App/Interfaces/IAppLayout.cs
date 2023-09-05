@@ -1,4 +1,6 @@
-﻿namespace ConsolePages
+﻿using System;
+
+namespace ConsolePages
 {
     /// <summary>
     /// Base of content layouts
@@ -6,8 +8,8 @@
     public interface IAppContentLayout
     {
         /// <summary>
-        /// Header of contents, print on top of contents
+        /// Dialog stream is a stream of consecutive print and input methodes to standarn I/O
         /// </summary>
-        public string HeadOfContents { get; }
+        public Action<DialogStream> DialogStream { get; }
     }
 }
