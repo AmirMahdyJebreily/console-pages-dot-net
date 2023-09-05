@@ -1,5 +1,4 @@
-﻿using ConsolePages;
-using System;
+﻿using System;
 
 namespace ConsolePages
 {
@@ -36,7 +35,7 @@ namespace ConsolePages
 
         public IPage Show()
         {
-            this.DialogStream.Invoke(new DialogStream());
+            DialogStream.Invoke(new DialogStream());
             return this;
         }
     }

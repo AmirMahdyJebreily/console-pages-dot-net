@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace ConsolePages
 {
@@ -52,6 +51,6 @@ namespace ConsolePages
             _page = page.Show();
         }
 
-        public void ShowMainPage() => ShowPage(this._main_Page);
+        public void ShowMainPage() => ShowPage(_main_Page);
     }
 }

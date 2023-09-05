@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using System.Linq;
 
 namespace ConsolePages
 {
@@ -13,7 +12,7 @@ namespace ConsolePages
 
         public AppLayout(params (string, Color?)[] texts)
         {
-            
+
         }
 
     }

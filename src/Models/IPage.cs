@@ -1,5 +1,4 @@
-﻿using ConsolePages;
-using System;
+﻿using System;
 
 namespace ConsolePages
 {
