@@ -21,6 +21,11 @@ namespace ConsolePages
         internal static Action<ConsoleColor> _chng_color_mtd = (_c_) => Console.ForegroundColor = _c_;
 
         /// <summary>
+        /// print + new line method delegate
+        /// </summary>
+        internal static Func<string> _input_mtd = (() => Console.ReadLine());
+
+        /// <summary>
         /// clean method delegate
         /// </summary>
         internal static Action _cln_mtd = () => Console.Clear();

@@ -7,11 +7,12 @@ namespace ConsolePages
     public class PagesArgs
     {
         private Action<object> _print = _prvt_sttc._prnt_mtd;
+        private Func<string> _input = _prvt_sttc._input_mtd;
         private Action<ConsoleColor> _ch_color = _prvt_sttc._chng_color_mtd;
         private Action _clear = _prvt_sttc._cln_mtd;
         private ColorTheme _theme = _prvt_sttc._dflt_color_theme;
 
-        #region Print Method
+        #region Print No Line Method
         public void PrintNl(object obj) => _print(obj);
         public void PrintNl(string text) => _print(text);
         public void PrintNl(string text, ConsoleColor color)
@@ -67,7 +68,6 @@ namespace ConsolePages
 
             }
         }
-
         public void PrintNl(params object[] items)
         {
             (string, ConsoleColor?)[] res = new (string, ConsoleColor?)[items.Length];
@@ -92,8 +92,6 @@ namespace ConsolePages
             }
             PrintNl(res);
         }
-
-
         #endregion
 
         #region Print Method
@@ -178,6 +176,52 @@ namespace ConsolePages
             }
             Print(res);
         }
+        #endregion
+
+        #region Input Method
+        public string Input() => _input();
+
+        public string Input(object obj)
+        {
+            PrintNl(obj.ToString());
+            return _input();
+        }
+        public string Input(string text)
+        {
+            PrintNl(text.ToString());
+            return _input();
+        }
+        public string Input(string text, ConsoleColor color)
+        {
+            PrintNl(text, color);
+            return _input();
+        }
+        public string Input(string sep = "\u0020", params string[] texts)
+        {
+            PrintNl(sep, texts);
+            return _input();
+        }
+        public string Input(params string[] texts)
+        {
+            PrintNl(texts);
+            return _input();
+        }
+        public string Input(string sep = "\u0020", params (string, ConsoleColor?)[] texts)
+        {
+            PrintNl(sep, texts);
+            return _input();
+        }
+        public string Input(params (string, ConsoleColor?)[] texts)
+        {
+            PrintNl(texts);
+            return _input();
+        }
+        public string Input(params object[] items)
+        {
+            PrintNl(items);
+            return Input();
+        }
+
         #endregion
 
         public Action Clear => _clear;
