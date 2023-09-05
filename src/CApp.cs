@@ -11,7 +11,7 @@ namespace ConsolePages
         private IPage _main_Page;
         private IPage _page;
         private string _title;
-        private IContentObj _layout;
+        private AppLayout _layout;
         //...
         #endregion
 
@@ -29,25 +29,31 @@ namespace ConsolePages
         /// <summary>
         /// contents layout of the app
         /// </summary>
-        public IContentObj Layout => _layout;
+        public AppLayout Layout => _layout;
 
         //...
         #endregion
 
         #region Constructors
-        public CApp(IPage main_Page)
+        public CApp()
         {
             _title = Assembly.GetCallingAssembly().GetName().Name;
             _layout = _prvt_sttc._dflt_app_cntnt_lyot;
             _page = new Page(_layout);
-            _main_Page = main_Page;
+            _main_Page = _page;
         }
 
         #endregion
 
-        public void ShowPage(IPage page)
+        private void _showLayout()
         {
             _prvt_sttc._cln_mtd();
+            Layout.Show();
+        }
+
+        public void ShowPage(IPage page)
+        {
+            _showLayout();
             _page = page;
             _page.Show();
         }

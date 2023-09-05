@@ -38,7 +38,7 @@ namespace ConsolePages
         /// <summary>
         /// default layout of pages
         /// </summary>
-        internal static IContentObj _dflt_app_cntnt_lyot = new AppLayout(
+        internal static AppLayout _dflt_app_cntnt_lyot = new AppLayout(
                 (args) =>
                 {
                     args.Print("Hello to Program");
