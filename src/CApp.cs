@@ -9,6 +9,7 @@ namespace ConsolePages
     public class CApp
     {
         #region Fields
+        private IPage _main_Page;
         private IPage _page;
         private string _title;
         private IAppContentLayout _layout;
@@ -35,18 +36,22 @@ namespace ConsolePages
         #endregion
 
         #region Constructors
-        public CApp()
+        public CApp(IPage main_Page)
         {
             _title = Assembly.GetCallingAssembly().GetName().Name;
             _layout = _prvt_sttc._dflt_app_cntnt_lyot;
             _page = new Page(_layout);
+            _main_Page = main_Page;
         }
 
         #endregion
 
         public void ShowPage(IPage page)
         {
+            _prvt_sttc._cln_mtd();
             _page = page.Show();
         }
+
+        public void ShowMainPage() => ShowPage(this._main_Page);
     }
 }
