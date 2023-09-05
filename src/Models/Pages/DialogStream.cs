@@ -4,7 +4,7 @@ using System.Linq;
 namespace ConsolePages
 {
 
-    public class PagesArgs
+    public class DialogStream
     {
         private Action<object> _print = _prvt_sttc._prnt_mtd;
         private Func<string> _input = _prvt_sttc._input_mtd;
@@ -237,9 +237,9 @@ namespace ConsolePages
         public ConsoleColor InfoColor => _theme.InformationColor;
         #endregion
 
-        public PagesArgs() { }
+        public DialogStream() { }
 
-        public PagesArgs(ColorTheme theme)
+        public DialogStream(ColorTheme theme)
         {
             _theme = theme;
         }
