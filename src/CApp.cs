@@ -40,7 +40,7 @@ namespace ConsolePages
             _title = Assembly.GetCallingAssembly().GetName().Name;
             _layout = _prvt_sttc._dflt_app_cntnt_lyot;
             _page = new Page(_layout);
-            _main_Page = _page;
+            _main_Page = new Page(_layout);
         }
 
         #endregion

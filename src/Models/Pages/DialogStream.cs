@@ -95,7 +95,6 @@ namespace ConsolePages
 
         #region Print Method
         public void Print(object obj) => PrintNl(obj.ToString(), "\n");
-        public void Print(string text) => Print(text);
         public void Print(string text, ConsoleColor color)
         {
             _ch_color(color);
@@ -104,7 +103,7 @@ namespace ConsolePages
 
         }
         public void Print(string[] texts, string sep = "\n") => PrintNl(string.Join(sep, texts));
-        public void Print(params string[] texts) => PrintNl(string.Join("\n", texts));
+        public void Print(params string[] texts) => PrintNl(string.Join("\n", texts) + "\n");
 
         public void Print((string, ConsoleColor?)[] texts, string sep = "\n")
         {
@@ -126,6 +125,7 @@ namespace ConsolePages
                     PrintNl(sep); // add seprator to texts
                 }
             }
+            PrintNl("\n");
         }
 
         public void Print(params (string, ConsoleColor?)[] texts)
