@@ -5,22 +5,22 @@ namespace ConsolePages
     public class Page : IPage
     {
         #region Private Fields
-        private IAppContentLayout _layout = _prvt_sttc._dflt_app_cntnt_lyot;
+        private IContentObj _layout = _prvt_sttc._dflt_app_cntnt_lyot;
         private Action<DialogStream>? _dialog_stream;
         #endregion
 
         #region Public Properties
-        public IAppContentLayout ContentLayout => _layout;
+        public IContentObj ContentLayout => _layout;
         public Action<DialogStream>? DialogStream => _dialog_stream;
         #endregion
 
         #region Constructor(s)
-        public Page(IAppContentLayout layout)
+        public Page(IContentObj layout)
         {
             _layout = layout;
         }
 
-        public Page(IAppContentLayout layout, Action<DialogStream> dialogStream)
+        public Page(IContentObj layout, Action<DialogStream> dialogStream)
         {
             _layout = layout;
             DefineDialog(dialogStream);

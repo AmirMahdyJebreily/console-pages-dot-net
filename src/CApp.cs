@@ -11,7 +11,7 @@ namespace ConsolePages
         private IPage _main_Page;
         private IPage _page;
         private string _title;
-        private IAppContentLayout _layout;
+        private IContentObj _layout;
         //...
         #endregion
 
@@ -29,7 +29,7 @@ namespace ConsolePages
         /// <summary>
         /// contents layout of the app
         /// </summary>
-        public IAppContentLayout Layout => _layout;
+        public IContentObj Layout => _layout;
 
         //...
         #endregion
@@ -47,6 +47,7 @@ namespace ConsolePages
 
         public void ShowPage(IPage page)
         {
+
             _prvt_sttc._cln_mtd();
             _page = page.Show();
         }

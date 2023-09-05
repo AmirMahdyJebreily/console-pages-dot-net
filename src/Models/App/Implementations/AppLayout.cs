@@ -6,7 +6,7 @@ namespace ConsolePages
     /// <summary>
     /// default layout of app 
     /// </summary>
-    public class AppLayout : IAppContentLayout
+    public class AppLayout : IContentObj
     {
         private Action<DialogStream> _head_of_content;
 
@@ -29,5 +29,7 @@ namespace ConsolePages
         {
             _head_of_content = page.DialogStream;
         }
+
+
     }
 }
