@@ -47,9 +47,9 @@ namespace ConsolePages
 
         public void ShowPage(IPage page)
         {
-
             _prvt_sttc._cln_mtd();
-            _page = page.Show();
+            _page = page;
+            _page.Show();
         }
 
         public void ShowMainPage() => ShowPage(_main_Page);

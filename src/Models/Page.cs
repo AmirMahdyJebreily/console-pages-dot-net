@@ -32,10 +32,9 @@ namespace ConsolePages
             _dialog_stream = dialogStream;
         }
 
-        public IPage Show()
+        public void Show()
         {
             DialogStream.Invoke(new DialogStream());
-            return this;
         }
     }
 }

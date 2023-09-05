@@ -15,6 +15,6 @@ namespace ConsolePages
         /// <summary>
         /// A method to execute the <see cref="DialogStream"/>
         /// </summary>
-        IContentObj Show();
+        void Show();
     }
 }

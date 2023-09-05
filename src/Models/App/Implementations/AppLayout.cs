@@ -30,10 +30,9 @@ namespace ConsolePages
             _head_of_content = page.DialogStream;
         }
 
-        public IContentObj Show()
+        public void Show()
         {
             DialogStream.Invoke(new DialogStream());
-            return this;
         }
 
     }
