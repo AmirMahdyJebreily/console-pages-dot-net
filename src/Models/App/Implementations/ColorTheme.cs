@@ -13,6 +13,8 @@ namespace ConsolePages
         public ConsoleColor ErrorColor { get; set; }
         public ConsoleColor SuccessColor { get; set; }
         public ConsoleColor InformationColor { get; set; }
+        public ConsoleColor InputColor { get; set; }
+
 
         /// <summary>
         /// Default constructor, provide default color theme
@@ -25,6 +27,7 @@ namespace ConsolePages
             ErrorColor = ConsoleColor.Red;
             SuccessColor = ConsoleColor.Green;
             InformationColor = ConsoleColor.DarkCyan;
+            InputColor = ConsoleColor.Cyan;
         }
 
 
@@ -36,6 +39,8 @@ namespace ConsolePages
             ErrorColor = ConsoleColor.Red;
             SuccessColor = ConsoleColor.Green;
             InformationColor = ConsoleColor.DarkBlue;
+            InputColor = ConsoleColor.Cyan;
+
         }
         public ColorTheme(ConsoleColor primeryColor, ConsoleColor secondColor)
         {
@@ -45,6 +50,8 @@ namespace ConsolePages
             ErrorColor = ConsoleColor.Red;
             SuccessColor = ConsoleColor.Green;
             InformationColor = ConsoleColor.DarkBlue;
+            InputColor = ConsoleColor.Cyan;
+
         }
 
         public ColorTheme(ConsoleColor primeryColor, ConsoleColor secondColor, ConsoleColor warningColor)
@@ -55,6 +62,8 @@ namespace ConsolePages
             ErrorColor = ConsoleColor.Red;
             SuccessColor = ConsoleColor.Green;
             InformationColor = ConsoleColor.DarkBlue;
+            InputColor = ConsoleColor.Cyan;
+
         }
 
         public ColorTheme(ConsoleColor primeryColor, ConsoleColor secondColor, ConsoleColor warningColor, ConsoleColor errorColor)
@@ -65,6 +74,8 @@ namespace ConsolePages
             ErrorColor = errorColor;
             SuccessColor = ConsoleColor.Green;
             InformationColor = ConsoleColor.DarkBlue;
+            InputColor = ConsoleColor.Cyan;
+
         }
 
         public ColorTheme(ConsoleColor primeryColor, ConsoleColor secondColor, ConsoleColor warningColor, ConsoleColor errorColor, ConsoleColor successColor)
@@ -75,6 +86,8 @@ namespace ConsolePages
             ErrorColor = errorColor;
             SuccessColor = successColor;
             InformationColor = ConsoleColor.DarkBlue;
+            InputColor = ConsoleColor.Cyan;
+
         }
 
         public ColorTheme(ConsoleColor primeryColor, ConsoleColor secondColor, ConsoleColor warningColor, ConsoleColor errorColor, ConsoleColor successColor, ConsoleColor infoColor)
@@ -85,6 +98,19 @@ namespace ConsolePages
             ErrorColor = errorColor;
             SuccessColor = successColor;
             InformationColor = infoColor;
+            InputColor = ConsoleColor.Cyan;
+
+        }
+
+        public ColorTheme(ConsoleColor primeryColor, ConsoleColor secondColor, ConsoleColor warningColor, ConsoleColor errorColor, ConsoleColor successColor, ConsoleColor infoColor, ConsoleColor inputColor)
+        {
+            PrimeryColor = primeryColor;
+            SecondColor = secondColor;
+            WarningColor = warningColor;
+            ErrorColor = errorColor;
+            SuccessColor = successColor;
+            InformationColor = infoColor;
+            InputColor = inputColor;
         }
 
     }

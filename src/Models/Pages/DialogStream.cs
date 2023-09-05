@@ -183,41 +183,63 @@ namespace ConsolePages
         public string Input(object obj)
         {
             PrintNl(obj.ToString());
-            return _input();
+            _ch_color(InputColor);
+            string res = _input();
+            ResetColor();
+            return res;
         }
         public string Input(string text)
         {
             PrintNl(text.ToString());
-            return _input();
+            _ch_color(InputColor);
+            string res = _input();
+            ResetColor();
+            return res;
         }
         public string Input(string text, ConsoleColor color)
         {
             PrintNl(text, color);
-            return _input();
+            _ch_color(InputColor);
+            string res = _input();
+            ResetColor();
+            return res;
         }
         public string Input(string sep = "\u0020", params string[] texts)
         {
             PrintNl(sep, texts);
-            return _input();
+            _ch_color(InputColor);
+            string res = _input();
+            ResetColor();
+            return res;
         }
         public string Input(params string[] texts)
         {
             PrintNl(texts);
-            return _input();
+            _ch_color(InputColor);
+            string res = _input();
+            ResetColor();
+            return res;
         }
         public string Input(string sep = "\u0020", params (string, ConsoleColor?)[] texts)
         {
             PrintNl(sep, texts);
-            return _input();
+            _ch_color(InputColor);
+            string res = _input();
+            ResetColor();
+            return res;
         }
         public string Input(params (string, ConsoleColor?)[] texts)
         {
             PrintNl(texts);
-            return _input();
+            _ch_color(InputColor);
+            string res = _input();
+            ResetColor();
+            return res;
         }
         public string Input(params object[] items)
         {
             PrintNl(items);
+            _ch_color(InputColor);
             return Input();
         }
 
@@ -234,7 +256,13 @@ namespace ConsolePages
         public ConsoleColor ErrorColor => _theme.ErrorColor;
         public ConsoleColor SuccessColor => _theme.SuccessColor;
         public ConsoleColor InfoColor => _theme.InformationColor;
+        public ConsoleColor InputColor => _theme.InputColor;
         #endregion
+
+        public void ResetColor()
+        {
+            _ch_color(PrimeColor);
+        }
 
         public DialogStream() { }
 
