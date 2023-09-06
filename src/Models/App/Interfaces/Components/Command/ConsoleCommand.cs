@@ -10,7 +10,7 @@ namespace ConsolePages
 
         public char CommandKey => _commandKey;
         public (string, ConsoleColor?)[] CommandDetails => _details;
-        public Action<DialogStream> ObeyCommand => _obey;
+        public Action<DialogStream> CommandHandler => _obey;
 
         public void SetCommandDetails(params object[] details)
         {

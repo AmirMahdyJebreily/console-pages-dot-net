@@ -232,10 +232,25 @@ namespace ConsolePages
         {
             return _command().KeyChar;
         }
-        public char GetCommand(object[] commandDitails)
+
+        public ConsoleCommand MakeCommand(char key, Action<DialogStream> handler, params object[] details)
         {
-            return _command().KeyChar;
+            return ConsoleCommand.SetCommand(key, handler, details);
         }
+
+        public void GetCommand(CommandSwitch consoleCommands)
+        {
+            char key = _command().KeyChar;
+            consoleCommands[key].CommandHandler.Invoke(new DialogStream());
+        }
+
+        public void GetCommand(ConsoleCommand[] consoleCommands)
+        {
+            char key = _command().KeyChar;
+            var _switch = new CommandSwitch(consoleCommands);
+            _switch[key].CommandHandler.Invoke(new DialogStream());
+        }
+
         #endregion
 
         public void WaitForAnyKey()
