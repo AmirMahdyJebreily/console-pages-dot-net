@@ -8,20 +8,19 @@ main.DefineDialog((a) =>
 {
     a.Print("Wellcome to my Program", "\n", ("  Select Commands : ", a.SecondColor));
 
-    a.GetCommand(cApp, new ConsoleCommand[]
+    a.GetCommand(new ConsoleCommand[]
     {
-        a.MakeCommand('1', (a, c) => SayHelloHandler(a,c), "Say Hello")
+        a.MakeCommand('1', () => SayHelloHandler(cApp), "Say Hello")
     });
 
 });
 
 
-void SayHelloHandler(DialogStream a, CApp c)
+void SayHelloHandler(CApp c)
 {  
-    c.ShowPage(() => {
+    c.ShowPage((a) => {
         a.Print("Hello");
         a.End();
-        
     });
 }
 
