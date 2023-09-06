@@ -258,6 +258,11 @@ namespace ConsolePages
             return ConsoleCommand.SetCommand(key, (a, c) => handler(c), details);
         }
 
+        public ConsoleCommand MakeCommand(char key, Action handler, params object[] details)
+        {
+            return ConsoleCommand.SetCommand(key, (a, c) => handler(), details);
+        }
+
         public void GetCommand(CApp cApp, CommandSwitch consoleCommands)
         {
             _printCommandDetail(consoleCommands);
@@ -271,6 +276,14 @@ namespace ConsolePages
             _printCommandDetail(_switch);
             char key = _command().KeyChar;
             _switch[key].CommandHandler.Invoke(new DialogStream(), cApp);
+        }
+
+        public void GetCommand(ConsoleCommand[] consoleCommands)
+        {
+            var _switch = new CommandSwitch(consoleCommands);
+            _printCommandDetail(_switch);
+            char key = _command().KeyChar;
+            _switch[key].CommandHandler.Invoke(new DialogStream(), new CApp());
         }
 
         #endregion
