@@ -7,6 +7,7 @@ namespace ConsolePages
     {
         private Action<object> _print = _prvt_sttc._prnt_mtd;
         private Func<string> _input = _prvt_sttc._input_mtd;
+        private Func<ConsoleKeyInfo> _command = _prvt_sttc._command_mtd;
         private Action<ConsoleColor> _ch_color = _prvt_sttc._chng_color_mtd;
         private Action _clear = _prvt_sttc._cln_mtd;
         private ColorTheme _theme = _prvt_sttc._dflt_color_theme;
@@ -243,6 +244,13 @@ namespace ConsolePages
             return Input();
         }
 
+        #endregion
+
+        #region Command Method
+        public char GetCommand()
+        {
+            return _command().KeyChar;
+        }
         #endregion
 
         public Action Clear => _clear;

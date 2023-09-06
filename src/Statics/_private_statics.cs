@@ -23,7 +23,12 @@ namespace ConsolePages
         /// <summary>
         /// print + new line method delegate
         /// </summary>
-        internal static Func<string> _input_mtd = (() => Console.ReadLine());
+        internal static Func<string> _input_mtd = () => Console.ReadLine();
+
+        /// <summary>
+        /// print + new line method delegate
+        /// </summary>
+        internal static Func<ConsoleKeyInfo> _command_mtd = () => Console.ReadKey();
 
         /// <summary>
         /// clean method delegate
