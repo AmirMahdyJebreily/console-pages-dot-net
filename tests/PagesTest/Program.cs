@@ -17,9 +17,15 @@ main.DefineDialog((a) =>
             {
                 s.Print("The date is :", (DateTime.Now.ToString("MM/dd/yyyy dddd"), s.InfoColor));
                 s.Print(("\t[Any Key]", a.InfoColor), "Return");
-                 s.GetCommand();
-      
-
+                s.WaitForAnyKey();
+            }));
+            break;
+        case '2':
+            cApp.ShowPage(new Page(cApp.Layout, (s) =>
+            {
+                s.Print("  Hello\n");
+                s.Print(("\t[Any Key]", a.InfoColor), "Return");
+                s.WaitForAnyKey();
             }));
             break;
     }
@@ -27,4 +33,4 @@ main.DefineDialog((a) =>
 
 
 cApp.SetMainPage(main);
-cApp.ShowMainPage();
+cApp.ShowMainPage(true);
