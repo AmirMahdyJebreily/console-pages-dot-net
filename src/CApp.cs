@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 
 namespace ConsolePages
 {
@@ -50,16 +51,30 @@ namespace ConsolePages
             _main_Page = page;
         }
 
-        private void _showLayout()
+        private void _showLayout(IPage page)
         {
             _prvt_sttc._cln_mtd();
-            Layout.Show();
+            page.ContentLayout.Show();
         }
 
         public void ShowPage(IPage page)
         {
-            _showLayout();
+            _showLayout(page);
             _page = page;
+            _page.Show();
+        }
+
+        public void ShowPage(Action<DialogStream> dialogStream)
+        {
+            _page = new Page(_layout, dialogStream);
+            _showLayout(_page);
+            _page.Show();
+        }
+
+        public void ShowPage(Action dialogStream)
+        {
+            _page = new Page(_layout, (a) => dialogStream());
+            _showLayout(_page);
             _page.Show();
         }
 

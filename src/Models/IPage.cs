@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ConsolePages
+﻿namespace ConsolePages
 {
     /// <summary>
     /// base of all pages

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 
 namespace ConsolePages
 {
@@ -22,7 +21,7 @@ namespace ConsolePages
 
         public void Set(Action<DialogStream> content)
         {
-            _head_of_content = content; 
+            _head_of_content = content;
         }
 
         public void SetFromPage(IPage page)
