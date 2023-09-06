@@ -63,6 +63,19 @@ namespace ConsolePages
             _page.Show();
         }
 
-        public void ShowMainPage() => ShowPage(_main_Page);
+        public void ShowMainPage(bool loop = false)
+        {
+            if (loop)
+            {
+                while (true)
+                {
+                    ShowPage(_main_Page);
+                }
+            }
+            else
+            {
+                ShowPage(_main_Page);
+            }
+        }
     }
 }
