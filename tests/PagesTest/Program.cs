@@ -15,7 +15,6 @@ main.DefineDialog((a) =>
 
 });
 
-
 void SayHelloHandler(CApp c)
 {  
     c.ShowPage((a) => {
@@ -23,7 +22,6 @@ void SayHelloHandler(CApp c)
         a.End();
     });
 }
-
 
 cApp.SetMainPage(main);
 cApp.ShowMainPage(true);
