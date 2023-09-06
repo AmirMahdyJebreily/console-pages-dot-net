@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace ConsolePages
 {
@@ -233,6 +234,14 @@ namespace ConsolePages
             return _command().KeyChar;
         }
 
+        private void _printCommandDetail(CommandSwitch commands)
+        {
+            foreach (var item in commands.Values)
+            {
+                Print(item.CommandDetails);
+            }
+        }
+
         public ConsoleCommand MakeCommand(char key, Action<DialogStream> handler, params object[] details)
         {
             return ConsoleCommand.SetCommand(key, handler, details);
@@ -240,14 +249,16 @@ namespace ConsolePages
 
         public void GetCommand(CommandSwitch consoleCommands)
         {
+            _printCommandDetail(consoleCommands);
             char key = _command().KeyChar;
             consoleCommands[key].CommandHandler.Invoke(new DialogStream());
         }
 
         public void GetCommand(ConsoleCommand[] consoleCommands)
         {
-            char key = _command().KeyChar;
             var _switch = new CommandSwitch(consoleCommands);
+            _printCommandDetail(_switch);
+            char key = _command().KeyChar;
             _switch[key].CommandHandler.Invoke(new DialogStream());
         }
 
