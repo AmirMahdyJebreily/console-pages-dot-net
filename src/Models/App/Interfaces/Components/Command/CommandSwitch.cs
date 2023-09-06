@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
 
 namespace ConsolePages
 {
@@ -47,12 +45,12 @@ namespace ConsolePages
             _commands.Add(key, value);
         }
 
-        public void Add(char key, Action<DialogStream> obey, (string, ConsoleColor?)[] details)
+        public void Add(char key, Action<DialogStream, CApp> obey, (string, ConsoleColor?)[] details)
         {
             _commands.Add(key, new ConsoleCommand(key, obey, details));
         }
 
-        public void Add(char key, Action<DialogStream> obey, params object[] details)
+        public void Add(char key, Action<DialogStream, CApp> obey, params object[] details)
         {
             _commands.Add(key, ConsoleCommand.SetCommand(key, obey, details));
         }
