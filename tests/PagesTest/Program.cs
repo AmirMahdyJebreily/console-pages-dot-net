@@ -20,8 +20,8 @@ void SayHelloHandler(DialogStream a, CApp c)
 {  
     c.ShowPage(() => {
         a.Print("Hello");
-        a.Print("Enter any key to return ...");
-        a.WaitForAnyKey();
+        a.End();
+        
     });
 }
 

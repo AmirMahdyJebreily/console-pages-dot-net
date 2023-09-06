@@ -270,6 +270,12 @@ namespace ConsolePages
             _command();
         }
 
+        public void End()
+        {
+            Print("Enter any key to return ...");
+            WaitForAnyKey();
+        }
+
         public Action Clear => _clear;
 
         #region Colors of Theme
