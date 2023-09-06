@@ -283,7 +283,7 @@ namespace ConsolePages
             var _switch = new CommandSwitch(consoleCommands);
             _printCommandDetail(_switch);
             char key = _command().KeyChar;
-            _switch[key].CommandHandler.Invoke(new DialogStream(), new CApp());
+            _switch[key].CommandHandler.Invoke(null, null);
         }
 
         #endregion
