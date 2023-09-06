@@ -154,7 +154,7 @@ namespace ConsolePages
         }
         public void Print(params object[] items)
         {
-            var res = _prvt_sttc.obj2TCAPPF(items);
+            var res = _prvt_sttc._objArr2TCAPPF(items);
             Print(res);
         }
         #endregion
