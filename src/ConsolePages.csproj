@@ -5,6 +5,7 @@
         <Nullable>enable</Nullable>
         <PackageId>ConsolePages</PackageId>
         <Version>1.0.0-beta</Version>
+        <Description>A lite weight library for create daynamic console applications in dotnet and outher frameworks...  </Description>
         <Authors>Code Aggha</Authors>
         <Product>ConsolePages</Product>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
