@@ -4,9 +4,10 @@
         <TargetFramework>netstandard2.1</TargetFramework>
         <Nullable>enable</Nullable>
         <PackageId>ConsolePages</PackageId>
-        <Version>1.0.0-beta</Version>
+        <Version>1.0.0-beta.12</Version>
         <Description>A lite weight library for create daynamic console applications in dotnet and outher frameworks...  </Description>
-        <Authors>Code Aggha</Authors>
+        <PackageType>Dependency</PackageType>
+        <Authors>Code Agha</Authors>
         <Product>ConsolePages</Product>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
