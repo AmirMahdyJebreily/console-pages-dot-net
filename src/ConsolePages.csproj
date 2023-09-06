@@ -9,8 +9,14 @@
         <PackageType>Dependency</PackageType>
         <Authors>Code Agha</Authors>
         <Product>ConsolePages</Product>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <RepositoryUrl>https://github.com/AmirMahdyJebreily/console-pages-dot-net/</RepositoryUrl>
+        
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
     </PropertyGroup>
+    <ItemGroup>
+        <None Include="..\LICENSE" Pack="true" PackagePath=""/>
+    </ItemGroup>
 
 </Project>
