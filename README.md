@@ -4,7 +4,7 @@ A lite weight library for create daynamic console applications in dotnet and out
 ## Install
 you can install latest version of psckage with this command : 
 ```
-dotnet add package ConsolePages --version 1.0.0-beta
+dotnet add package ConsolePages
 ```
 
 ## Why develop applications based on terminal ?
