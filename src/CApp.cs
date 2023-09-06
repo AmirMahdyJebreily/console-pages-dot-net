@@ -45,6 +45,11 @@ namespace ConsolePages
 
         #endregion
 
+        public void SetMainPage(IPage page)
+        {
+            _main_Page = page;
+        }
+
         private void _showLayout()
         {
             _prvt_sttc._cln_mtd();
