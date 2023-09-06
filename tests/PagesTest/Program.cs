@@ -2,11 +2,29 @@
 
 CApp cApp = new CApp();
 
-cApp.ShowPage(new Page(cApp.Layout, (a) =>
+Page main = new Page(cApp.Layout);
+
+main.DefineDialog((a) =>
 {
-    a.Print(("[Error]", a.ErrorColor), "An error occurred in the code...");
-    a.Print(("[Success]", a.SuccessColor), "Download Successfully completed...");
-    a.Print(("[Info]", a.InfoColor), "App version is", ("0.0.1", a.WarningColor), "...");
-    string txt = a.Input("Enter your",("age",a.InfoColor),": ");
-    a.Print("Your age is", (txt, a.InfoColor));
-}));
+    a.Print("Wellcome to my Program", "\n", ("  Select Commands : ", a.SecondColor));
+    a.Print(("\t[1]", a.InfoColor), "Get System Date and time");
+    a.Print(("\t[2]", a.InfoColor), "Say Hello");
+    char command = a.GetCommand();
+    switch (command)
+    {
+        case '1':
+            cApp.ShowPage(new Page(cApp.Layout, (s) =>
+            {
+                s.Print("The date is :", (DateTime.Now.ToString("MM/dd/yyyy dddd"), s.InfoColor));
+                s.Print(("\t[Any Key]", a.InfoColor), "Return");
+                 s.GetCommand();
+      
+
+            }));
+            break;
+    }
+});
+
+
+cApp.SetMainPage(main);
+cApp.ShowMainPage();

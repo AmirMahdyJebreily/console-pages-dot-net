@@ -253,6 +253,11 @@ namespace ConsolePages
         }
         #endregion
 
+        public void WaitForAnyKey()
+        {
+            _command();
+        }
+
         public Action Clear => _clear;
 
         #region Colors of Theme
