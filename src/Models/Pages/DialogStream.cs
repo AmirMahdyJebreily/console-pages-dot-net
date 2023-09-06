@@ -248,6 +248,16 @@ namespace ConsolePages
             return ConsoleCommand.SetCommand(key, handler, details);
         }
 
+        public ConsoleCommand MakeCommand(char key, Action<DialogStream> handler, params object[] details)
+        {
+            return ConsoleCommand.SetCommand(key, (a, c) => handler(a), details);
+        }
+
+        public ConsoleCommand MakeCommand(char key, Action<CApp> handler, params object[] details)
+        {
+            return ConsoleCommand.SetCommand(key, (a, c) => handler(c), details);
+        }
+
         public void GetCommand(CApp cApp, CommandSwitch consoleCommands)
         {
             _printCommandDetail(consoleCommands);
