@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace ConsolePages
 {
@@ -96,7 +95,8 @@ namespace ConsolePages
         #endregion
 
         #region Print Method
-        public void Print(object obj) => PrintNl(obj.ToString(), "\n");
+        public void Print(object obj) => PrintNl(sep: "", obj.ToString(), "\n");
+        public void Print(string text) => PrintNl(sep: "", text, "\n");
         public void Print(string text, ConsoleColor color)
         {
             _ch_color(color);
@@ -238,28 +238,29 @@ namespace ConsolePages
         {
             foreach (var item in commands.Values)
             {
+                PrintNl($"\t[{item.CommandKey}] ", InfoColor);
                 Print(item.CommandDetails);
             }
         }
 
-        public ConsoleCommand MakeCommand(char key, Action<DialogStream> handler, params object[] details)
+        public ConsoleCommand MakeCommand(char key, Action<DialogStream, CApp> handler, params object[] details)
         {
             return ConsoleCommand.SetCommand(key, handler, details);
         }
 
-        public void GetCommand(CommandSwitch consoleCommands)
+        public void GetCommand(CApp cApp, CommandSwitch consoleCommands)
         {
             _printCommandDetail(consoleCommands);
             char key = _command().KeyChar;
-            consoleCommands[key].CommandHandler.Invoke(new DialogStream());
+            consoleCommands[key].CommandHandler.Invoke(new DialogStream(), cApp);
         }
 
-        public void GetCommand(ConsoleCommand[] consoleCommands)
+        public void GetCommand(CApp cApp, ConsoleCommand[] consoleCommands)
         {
             var _switch = new CommandSwitch(consoleCommands);
             _printCommandDetail(_switch);
             char key = _command().KeyChar;
-            _switch[key].CommandHandler.Invoke(new DialogStream());
+            _switch[key].CommandHandler.Invoke(new DialogStream(), cApp);
         }
 
         #endregion
