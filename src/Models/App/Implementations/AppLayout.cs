@@ -14,9 +14,14 @@ namespace ConsolePages
         /// </summary>
         public Action<DialogStream> DialogStream => _head_of_content;
 
-        public AppLayout(Action<DialogStream> content)
+        public AppLayout()
         {
-            _head_of_content = content;
+            this.Set((a) => { });
+        }
+
+        public AppLayout(IContentObj content)
+        {
+            this.Set(content.DialogStream);
         }
 
         public void Set(Action<DialogStream> content)

@@ -13,6 +13,7 @@ namespace ConsolePages
         private IPage _page;
         private string _title;
         private AppLayout _layout;
+        private ColorTheme _theme;
         //...
         #endregion
 
@@ -32,6 +33,11 @@ namespace ConsolePages
         /// </summary>
         public AppLayout Layout => _layout;
 
+        /// <summary>
+        /// color theme of the app
+        /// </summary>
+        public ColorTheme Theme => _theme;
+
         //...
         #endregion
 
@@ -42,9 +48,22 @@ namespace ConsolePages
             _layout = _prvt_sttc._dflt_app_cntnt_lyot;
             _page = new Page(_layout);
             _main_Page = new Page(_layout);
+            _theme = _prvt_sttc._dflt_color_theme;
         }
 
         #endregion
+
+        #region Customizing
+        public void AddColorTheme(ColorTheme theme)
+        {
+            _theme = theme;
+        }
+        #endregion
+
+        public void AddLayout(IContentObj content)
+        {
+            _layout = new AppLayout(content);
+        }
 
         public void SetMainPage(IPage page)
         {
