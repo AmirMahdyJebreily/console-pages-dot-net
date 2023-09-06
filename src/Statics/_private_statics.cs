@@ -44,9 +44,7 @@ namespace ConsolePages
         /// <summary>
         /// default layout of pages
         /// </summary>
-        internal static AppLayout _dflt_app_cntnt_lyot = new AppLayout(
-                (args) => { }
-            );
+        internal static AppLayout _dflt_app_cntnt_lyot = new AppLayout();
 
         /// <summary>
         /// default color theme
