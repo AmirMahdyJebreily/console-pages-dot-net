@@ -7,29 +7,23 @@ Page main = new Page(cApp.Layout);
 main.DefineDialog((a) =>
 {
     a.Print("Wellcome to my Program", "\n", ("  Select Commands : ", a.SecondColor));
-    a.Print(("\t[1]", a.InfoColor), "Get System Date and time");
-    a.Print(("\t[2]", a.InfoColor), "Say Hello");
-    char command = a.GetCommand();
-    switch (command)
+
+    a.GetCommand(cApp, new ConsoleCommand[]
     {
-        case '1':
-            cApp.ShowPage(new Page(cApp.Layout, (s) =>
-            {
-                s.Print("The date is :", (DateTime.Now.ToString("MM/dd/yyyy dddd"), s.InfoColor));
-                s.Print(("\t[Any Key]", a.InfoColor), "Return");
-                s.WaitForAnyKey();
-            }));
-            break;
-        case '2':
-            cApp.ShowPage(new Page(cApp.Layout, (s) =>
-            {
-                s.Print("  Hello\n");
-                s.Print(("\t[Any Key]", a.InfoColor), "Return");
-                s.WaitForAnyKey();
-            }));
-            break;
-    }
+        a.MakeCommand('1', (a, c) => SayHelloHandler(a,c), "Say Hello")
+    });
+
 });
+
+
+void SayHelloHandler(DialogStream a, CApp c)
+{  
+    c.ShowPage(() => {
+        a.Print("Hello");
+        a.Print("Enter any key to return ...");
+        a.WaitForAnyKey();
+    });
+}
 
 
 cApp.SetMainPage(main);
