@@ -1,7 +1,19 @@
-# console-pages-dot-net
-a lite weight library for create daynamic console applications in dotnet
+# Console Pages
+A lite weight library for create daynamic console applications in dotnet and outher frameworks...  
 
-new syntax :
+## Install
+you can install latest version of psckage with this command : 
+```
+dotnet add package ConsolePages --version 1.0.0-beta
+```
+
+## Why develop applications based on terminal ?
+There is no exact answer to this issue, but right now we have a lot of Unix devices in the world and a lot of bad people looking for programs under the terminal. Secondly, a graphical GUI cannot always be the right choice!
+
+## Why use Console Pages ?
+Creating multipurpose and large programs with many options under the terminal for C# programmers always requires a lot of money and a code sheet full of console words 😁! But that nightmare of busy .CS program is over!
+
+ New syntax for make a simple app (see [Tests](https://github.com/AmirMahdyJebreily/console-pages-dot-net/blob/main/tests/PagesTest/Program.cs) To get to know more):
 ```csharp
 using ConsolePages;
 
@@ -17,7 +29,7 @@ cApp.ShowPage(new Page(cApp.Layout, (a) =>
 
 ```
 
-old syntax (in dotnet) : 
+Raw dotnet syntax (in dotnet) : 
 
 ```csharp
 Console.ForegroundColor = ConsoleColor.Red;
@@ -47,5 +59,8 @@ Console.ResetColor();
 Console.WriteLine("in your wallet");
 ```
 
-for this result :   
-![result a simple code in console pages](./docs/Images/res.png)
+Both of these will give you this result :   
+![result a simple code in console pages](./docs/Images/res.png)   
+
+In the raw mode of .NET, you say, "Hey, wait, do I have to write so much code and clutter up my page for a colorful output?"
+But the Console Pages helps us to have a bigger view of the development of the program under the terminal!
