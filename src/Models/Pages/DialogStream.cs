@@ -154,26 +154,7 @@ namespace ConsolePages
         }
         public void Print(params object[] items)
         {
-            (string, ConsoleColor?)[] res = new (string, ConsoleColor?)[items.Length];
-            for (int i = 0; i < items.Length; i++)
-            {
-                string strValue = string.Empty;
-                ConsoleColor? color = null;
-
-                var item = items[i];
-
-                if (item.GetType() == typeof((string, ConsoleColor)))
-                {
-                    strValue = (((string, ConsoleColor))item).Item1;
-                    color = (((string, ConsoleColor))item).Item2;
-                }
-                else
-                {
-                    strValue = items[i].ToString();
-                }
-
-                res[i] = (strValue, color);
-            }
+            var res = _prvt_sttc.obj2TCAPPF(items);
             Print(res);
         }
         #endregion
@@ -248,6 +229,10 @@ namespace ConsolePages
 
         #region Command Method
         public char GetCommand()
+        {
+            return _command().KeyChar;
+        }
+        public char GetCommand(object[] commandDitails)
         {
             return _command().KeyChar;
         }
