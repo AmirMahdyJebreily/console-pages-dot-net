@@ -62,7 +62,7 @@ Console.WriteLine("in your wallet");
 Both of these will give you this result :   
 
 
-![result a simple code in console pages](https://github.com/AmirMahdyJebreily/console-pages-dot-net/blob/main/docs/Images/res.png?raw=true)   
+![result a simple code in console pages](https://github.com/AmirMahdyJebreily/console-pages-dot-net/blob/main/docs/Images/res.png)   
 
 In the raw mode of .NET, you say, "Hey, wait, do I have to write so much code and clutter up my page for a colorful output?"
 But the Console Pages helps us to have a bigger view of the development of the program under the terminal!
