@@ -17,7 +17,7 @@ There is no exact answer to this issue, but right now we have a lot of Unix devi
 ## Why use Console Pages ?
 Creating multipurpose and large programs with many options under the terminal for C# programmers always requires a lot of money and a code sheet full of `Console` words 😁! But that nightmare of busy .CS program is over!
 
- New syntax for make a simple app (see [Tests](https://github.com/AmirMahdyJebreily/console-pages-dot-net/blob/main/tests/PagesTest/Program.cs) To get to know more):
+ New syntax for make a simple app (see [Tests](https://raw.github.com/AmirMahdyJebreily/console-pages-dot-net/blob/main/tests/PagesTest/Program.cs) To get to know more):
 ```csharp
 using ConsolePages;
 
@@ -66,7 +66,7 @@ Console.WriteLine("in your wallet");
 Both of these will give you this result :   
 
 
-![result a simple code in console pages](https://github.com/AmirMahdyJebreily/console-pages-dot-net/blob/main/docs/Images/res.png?raw=true)   
+![result a simple code in console pages](https://raw.githubusercontent.com/AmirMahdyJebreily/console-pages-dot-net/main/docs/Images/res.png)   
 
 In the raw mode of .NET, you say, "Hey, wait, do I have to write so much code and clutter up my page for a colorful output?"
 But the Console Pages helps us to have a bigger view of the development of the program under the terminal!
