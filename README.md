@@ -13,7 +13,7 @@ There is no exact answer to this issue, but right now we have a lot of Unix devi
 ## Why use Console Pages ?
 Creating multipurpose and large programs with many options under the terminal for C# programmers always requires a lot of money and a code sheet full of `Console` words 😁! But that nightmare of busy .CS program is over!
 
- New syntax for make a simple app (see [Tests](https://github.com/AmirMahdyJebreily/console-pages-dot-net/blob/main/tests/PagesTest/Program.cs) To get to know more):
+ New syntax for make a simple app (see [Tests](https://raw.github.com/AmirMahdyJebreily/console-pages-dot-net/blob/main/tests/PagesTest/Program.cs) To get to know more):
 ```csharp
 using ConsolePages;
 
