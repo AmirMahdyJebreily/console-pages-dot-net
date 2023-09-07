@@ -49,18 +49,18 @@ namespace ConsolePages
         /// <summary>
         /// default color theme
         /// </summary>
-        internal static ColorTheme _dflt_color_theme = new ColorTheme();
+        internal static ColorTheme _dflt_color_theme => new ColorTheme();
 
 
         /// <summary>
         /// Convert object to true Console App Content Format
         /// </summary>
         /// <param name="obj">Objects array thats most include <see cref="string"/>s and Couple Tuples <see cref="(string, ConsoleColor)"/></param>
-        /// <returns>a (string, ConsoleColor?) </returns>
-        internal static (string, ConsoleColor?) _obj2TCAPPF(object obj)
+        /// <returns>a (string, ConsoleColor) </returns>
+        internal static (string, ConsoleColor) _obj2TCAPPF(object obj)
         {
             string strValue = string.Empty;
-            ConsoleColor? color = null;
+            ConsoleColor color = _theme.PrimeryColor;
 
             var item = obj;
 
@@ -82,10 +82,10 @@ namespace ConsolePages
         /// Convert object array to true Console App Content Format
         /// </summary>
         /// <param name="objects">Objects array thats most include <see cref="string"/>s and Couple Tuples <see cref="(string, ConsoleColor)"/></param>
-        /// <returns>an array of (string, ConsoleColor?) </returns>
-        internal static (string, ConsoleColor?)[] _objArr2TCAPPF(params object[] objects)
+        /// <returns>an array of (string, ConsoleColor) </returns>
+        internal static (string, ConsoleColor)[] _objArr2TCAPPF(params object[] objects)
         {
-            (string, ConsoleColor?)[] res = new (string, ConsoleColor?)[objects.Length];
+            (string, ConsoleColor)[] res = new (string, ConsoleColor)[objects.Length];
             for (int i = 0; i < objects.Length; i++)
             {
                 res[i] = _obj2TCAPPF(objects[i]);

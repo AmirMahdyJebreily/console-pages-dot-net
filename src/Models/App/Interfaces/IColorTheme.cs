@@ -10,31 +10,31 @@ namespace ConsolePages
         /// <summary>
         /// Default color for texts
         /// </summary>
-        public ConsoleColor PrimeryColor { get; set; }
+        ConsoleColor PrimeryColor { get; set; }
 
         /// <summary>
         /// Default color for extra chracters
         /// </summary>
-        public ConsoleColor SecondColor { get; set; }
+        ConsoleColor SecondColor { get; set; }
 
         /// <summary>
         /// Default color for warning messges
         /// </summary>
-        public ConsoleColor WarningColor { get; set; }
+        ConsoleColor WarningColor { get; set; }
 
         /// <summary>
         /// Default color for error messages in console
         /// </summary>
-        public ConsoleColor ErrorColor { get; set; }
+        ConsoleColor ErrorColor { get; set; }
 
         /// <summary>
         /// Deafult color for success messages
         /// </summary>
-        public ConsoleColor SuccessColor { get; set; }
+        ConsoleColor SuccessColor { get; set; }
 
         /// <summary>
         /// Deafult color for information messages
         /// </summary>
-        public ConsoleColor InformationColor { get; set; }
+        ConsoleColor InformationColor { get; set; }
     }
 }

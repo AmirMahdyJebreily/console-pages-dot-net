@@ -6,12 +6,12 @@ namespace ConsolePages
     {
         #region Private Fields
         private IContentObj _layout = _prvt_sttc._dflt_app_cntnt_lyot;
-        private Action<DialogStream>? _dialog_stream;
+        private Action<DialogStream> _dialog_stream;
         #endregion
 
         #region Public Properties
         public IContentObj ContentLayout => _layout;
-        public Action<DialogStream>? DialogStream => _dialog_stream;
+        public Action<DialogStream> DialogStream => _dialog_stream;
         #endregion
 
         #region Constructor(s)

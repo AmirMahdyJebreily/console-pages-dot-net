@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
-        <Nullable>enable</Nullable>
+        <TargetFrameworks>netstandard2.1;netstandard2.0;net48;net472</TargetFrameworks>
+       
+        
         <PackageId>ConsolePages</PackageId>
-        <Version>1.0.0-beta.12</Version>
+        <Version>1.0.001-beta</Version>
         <Description>A lite weight library for create daynamic console applications in dotnet and outher frameworks...  </Description>
         <PackageType>Dependency</PackageType>
         <Authors>Code Agha</Authors>
@@ -16,7 +17,7 @@
 
     </PropertyGroup>
     <ItemGroup>
-        <None Include="..\LICENSE" Pack="true" PackagePath=""/>
+        <None Include="..\LICENSE" Pack="true" PackagePath="" />
     </ItemGroup>
 
 </Project>

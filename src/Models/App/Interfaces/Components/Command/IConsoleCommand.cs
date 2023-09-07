@@ -4,10 +4,10 @@ namespace ConsolePages
 {
     public interface IConsoleCommand
     {
-        public char CommandKey { get; }
+        char CommandKey { get; }
 
-        public (string, ConsoleColor?)[] CommandDetails { get; }
+        (string, ConsoleColor)[] CommandDetails { get; }
 
-        public Action<DialogStream?, CApp?> CommandHandler { get; }
+        Action<DialogStream, CApp> CommandHandler { get; }
     }
 }

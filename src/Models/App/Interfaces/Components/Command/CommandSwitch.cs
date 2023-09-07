@@ -45,7 +45,7 @@ namespace ConsolePages
             _commands.Add(key, value);
         }
 
-        public void Add(char key, Action<DialogStream, CApp> obey, (string, ConsoleColor?)[] details)
+        public void Add(char key, Action<DialogStream, CApp> obey, (string, ConsoleColor)[] details)
         {
             _commands.Add(key, new ConsoleCommand(key, obey, details));
         }

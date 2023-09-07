@@ -24,7 +24,7 @@ namespace ConsolePages
         }
         public void PrintNl(string sep = "\u0020", params string[] texts) => PrintNl(string.Join(sep, texts));
         public void PrintNl(params string[] texts) => PrintNl(string.Join("\u0020", texts));
-        public void PrintNl(string sep = "\u0020", params (string, ConsoleColor?)[] texts)
+        public void PrintNl(string sep = "\u0020", params (string, ConsoleColor)[] texts)
         {
             for (int i = 0; i < texts.Length; i++)
             {
@@ -34,7 +34,7 @@ namespace ConsolePages
                 }
                 else
                 {
-                    _ch_color(texts[i].Item2.Value);
+                    _ch_color(texts[i].Item2);
                 }
                 PrintNl(texts[i].Item1);
                 _ch_color(_theme.PrimeryColor);
@@ -46,7 +46,7 @@ namespace ConsolePages
 
             }
         }
-        public void PrintNl(params (string, ConsoleColor?)[] texts)
+        public void PrintNl(params (string, ConsoleColor)[] texts)
         {
             for (int i = 0; i < texts.Length; i++)
             {
@@ -56,7 +56,7 @@ namespace ConsolePages
                 }
                 else
                 {
-                    _ch_color(texts[i].Item2.Value);
+                    _ch_color(texts[i].Item2);
                 }
                 PrintNl(texts[i].Item1);
                 _ch_color(_theme.PrimeryColor);
@@ -70,11 +70,11 @@ namespace ConsolePages
         }
         public void PrintNl(params object[] items)
         {
-            (string, ConsoleColor?)[] res = new (string, ConsoleColor?)[items.Length];
+            (string, ConsoleColor)[] res = new (string, ConsoleColor)[items.Length];
             for (int i = 0; i < items.Length; i++)
             {
                 string strValue = string.Empty;
-                ConsoleColor? color = null;
+                ConsoleColor color = _prvt_sttc._theme.PrimeryColor;
 
                 var item = items[i];
 
@@ -107,7 +107,7 @@ namespace ConsolePages
         public void Print(string[] texts, string sep = "\n") => PrintNl(string.Join(sep, texts));
         public void Print(params string[] texts) => PrintNl(string.Join("\n", texts) + "\n");
 
-        public void Print((string, ConsoleColor?)[] texts, string sep = "\n")
+        public void Print((string, ConsoleColor)[] texts, string sep = "\n")
         {
             for (int i = 0; i < texts.Length; i++)
             {
@@ -117,7 +117,7 @@ namespace ConsolePages
                 }
                 else
                 {
-                    _ch_color(texts[i].Item2.Value);
+                    _ch_color(texts[i].Item2);    
                 }
                 PrintNl(texts[i].Item1);
                 _ch_color(_theme.PrimeryColor);
@@ -130,7 +130,7 @@ namespace ConsolePages
             PrintNl("\n");
         }
 
-        public void Print(params (string, ConsoleColor?)[] texts)
+        public void Print(params (string, ConsoleColor)[] texts)
         {
             for (int i = 0; i < texts.Length; i++)
             {
@@ -140,7 +140,7 @@ namespace ConsolePages
                 }
                 else
                 {
-                    _ch_color(texts[i].Item2.Value);
+                    _ch_color(texts[i].Item2);
                 }
                 PrintNl(texts[i].Item1);
                 _ch_color(_theme.PrimeryColor);
@@ -203,7 +203,7 @@ namespace ConsolePages
             ResetColor();
             return res;
         }
-        public string Input(string sep = "\u0020", params (string, ConsoleColor?)[] texts)
+        public string Input(string sep = "\u0020", params (string, ConsoleColor)[] texts)
         {
             PrintNl(sep, texts);
             _ch_color(InputColor);
@@ -211,7 +211,7 @@ namespace ConsolePages
             ResetColor();
             return res;
         }
-        public string Input(params (string, ConsoleColor?)[] texts)
+        public string Input(params (string, ConsoleColor)[] texts)
         {
             PrintNl(texts);
             _ch_color(InputColor);
