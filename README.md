@@ -1,5 +1,11 @@
 # Console Pages (1.0.2 beta)
-A lite weight library for create daynamic console applications in dotnet and outher frameworks...  
+A lite weight library for create daynamic console applications in dotnet and outher frameworks...      
+
+
+![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/ConsolePages) ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/AmirMahdyJebreily/console-pages-dot-net) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)   
+
+
+
 
 ## Install
 you can install latest version of psckage with this command : 
