@@ -231,7 +231,11 @@ namespace ConsolePages
         #region Command Method
         public char GetCommand()
         {
-            return _command().KeyChar;
+            _ch_color(_theme.BGColor);
+            char res = _command().KeyChar;
+            ResetColor();
+
+            return res;
         }
 
         private void _printCommandDetail(CommandSwitch commands)
@@ -243,47 +247,54 @@ namespace ConsolePages
             }
         }
 
+        private void _printUnknowKeyError(int wait = 1500)
+        {
+            Print(("[ERR]", _theme.ErrorColor), "The entered key was not recognized! Please enter again...");
+
+        }
+
         public ConsoleCommand MakeCommand(char key, Action<DialogStream> handler, params object[] details)
         {
             return ConsoleCommand.SetCommand(key, handler, details);
         }
-
-        //public ConsoleCommand MakeCommand(char key, Action<DialogStream> dialogHandler, params object[] details)
-        //{
-        //    return ConsoleCommand.SetCommand(key, (a) => dialogHandler(a), details);
-        //}
-
-        //public ConsoleCommand MakeCommand(char key, Action<CApp> appHandler, params object[] details)
-        //{
-        //    return ConsoleCommand.SetCommand(key, (a, c) => appHandler(c), details);
-        //}
 
         public ConsoleCommand MakeCommand(char key, Action emptyHandler, params object[] details)
         {
             return ConsoleCommand.SetCommand(key, (a) => emptyHandler(), details);
         }
 
-        public void GetCommand(CApp cApp, CommandSwitch consoleCommands)
+        public void GetCommand(CommandSwitch consoleCommands)
         {
             _printCommandDetail(consoleCommands);
-            char key = _command().KeyChar;
-            consoleCommands[key].CommandHandler.Invoke(new DialogStream());
-        }
-
-        public void GetCommand(CApp cApp, ConsoleCommand[] consoleCommands)
-        {
-            var _switch = new CommandSwitch(consoleCommands);
-            _printCommandDetail(_switch);
-            char key = _command().KeyChar;
-            _switch[key].CommandHandler.Invoke(new DialogStream());
+            while (true)
+            {
+                char key = GetCommand();
+                if (consoleCommands.ContainsKey(key) == null)
+                {
+                    consoleCommands[key].CommandHandler.Invoke(new DialogStream());
+                    return;
+                }
+                else
+                    _printUnknowKeyError();
+            }
         }
 
         public void GetCommand(ConsoleCommand[] consoleCommands)
         {
             var _switch = new CommandSwitch(consoleCommands);
             _printCommandDetail(_switch);
-            char key = _command().KeyChar;
-            _switch[key].CommandHandler.Invoke(null);
+            while (true)
+            {
+
+                char key = GetCommand();
+                if (_switch.ContainsKey(key))
+                {
+                    _switch[key].CommandHandler.Invoke(null);
+                    return;
+                }
+                else
+                    _printUnknowKeyError();
+            }
         }
 
         #endregion
