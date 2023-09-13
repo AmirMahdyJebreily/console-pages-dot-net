@@ -117,7 +117,7 @@ namespace ConsolePages
                 }
                 else
                 {
-                    _ch_color(texts[i].Item2);    
+                    _ch_color(texts[i].Item2);
                 }
                 PrintNl(texts[i].Item1);
                 _ch_color(_theme.PrimeryColor);
@@ -243,31 +243,31 @@ namespace ConsolePages
             }
         }
 
-        public ConsoleCommand MakeCommand(char key, Action<DialogStream, CApp> handler, params object[] details)
+        public ConsoleCommand MakeCommand(char key, Action<DialogStream> handler, params object[] details)
         {
             return ConsoleCommand.SetCommand(key, handler, details);
         }
 
-        public ConsoleCommand MakeCommand(char key, Action<DialogStream> handler, params object[] details)
-        {
-            return ConsoleCommand.SetCommand(key, (a, c) => handler(a), details);
-        }
+        //public ConsoleCommand MakeCommand(char key, Action<DialogStream> dialogHandler, params object[] details)
+        //{
+        //    return ConsoleCommand.SetCommand(key, (a) => dialogHandler(a), details);
+        //}
 
-        public ConsoleCommand MakeCommand(char key, Action<CApp> handler, params object[] details)
-        {
-            return ConsoleCommand.SetCommand(key, (a, c) => handler(c), details);
-        }
+        //public ConsoleCommand MakeCommand(char key, Action<CApp> appHandler, params object[] details)
+        //{
+        //    return ConsoleCommand.SetCommand(key, (a, c) => appHandler(c), details);
+        //}
 
-        public ConsoleCommand MakeCommand(char key, Action handler, params object[] details)
+        public ConsoleCommand MakeCommand(char key, Action emptyHandler, params object[] details)
         {
-            return ConsoleCommand.SetCommand(key, (a, c) => handler(), details);
+            return ConsoleCommand.SetCommand(key, (a) => emptyHandler(), details);
         }
 
         public void GetCommand(CApp cApp, CommandSwitch consoleCommands)
         {
             _printCommandDetail(consoleCommands);
             char key = _command().KeyChar;
-            consoleCommands[key].CommandHandler.Invoke(new DialogStream(), cApp);
+            consoleCommands[key].CommandHandler.Invoke(new DialogStream());
         }
 
         public void GetCommand(CApp cApp, ConsoleCommand[] consoleCommands)
@@ -275,7 +275,7 @@ namespace ConsolePages
             var _switch = new CommandSwitch(consoleCommands);
             _printCommandDetail(_switch);
             char key = _command().KeyChar;
-            _switch[key].CommandHandler.Invoke(new DialogStream(), cApp);
+            _switch[key].CommandHandler.Invoke(new DialogStream());
         }
 
         public void GetCommand(ConsoleCommand[] consoleCommands)
@@ -283,7 +283,7 @@ namespace ConsolePages
             var _switch = new CommandSwitch(consoleCommands);
             _printCommandDetail(_switch);
             char key = _command().KeyChar;
-            _switch[key].CommandHandler.Invoke(null, null);
+            _switch[key].CommandHandler.Invoke(null);
         }
 
         #endregion

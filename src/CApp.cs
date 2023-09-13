@@ -51,6 +51,33 @@ namespace ConsolePages
             _theme = _prvt_sttc._dflt_color_theme;
         }
 
+        public CApp(Page mainPage)
+        {
+            _title = Assembly.GetCallingAssembly().GetName().Name;
+            _layout = _prvt_sttc._dflt_app_cntnt_lyot;
+            _page = new Page(_layout);
+            _main_Page = mainPage;
+            _theme = _prvt_sttc._dflt_color_theme;
+        }
+
+        public CApp(Action<DialogStream, CApp> mainPageDialog)
+        {
+            _title = Assembly.GetCallingAssembly().GetName().Name;
+            _layout = _prvt_sttc._dflt_app_cntnt_lyot;
+            _page = new Page(_layout);
+            _main_Page = new Page(_layout, new Action<DialogStream>((a) => mainPageDialog(a, this)));
+            _theme = _prvt_sttc._dflt_color_theme;
+        }
+
+        public CApp(Action<DialogStream> mainPageDialog)
+        {
+            _title = Assembly.GetCallingAssembly().GetName().Name;
+            _layout = _prvt_sttc._dflt_app_cntnt_lyot;
+            _page = new Page(_layout);
+            _main_Page = new Page(_layout, mainPageDialog);
+            _theme = _prvt_sttc._dflt_color_theme;
+        }
+
         #endregion
 
         #region Customizing

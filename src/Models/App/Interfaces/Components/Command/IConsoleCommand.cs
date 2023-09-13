@@ -8,6 +8,6 @@ namespace ConsolePages
 
         (string, ConsoleColor)[] CommandDetails { get; }
 
-        Action<DialogStream, CApp> CommandHandler { get; }
+        Action<DialogStream> CommandHandler { get; }
     }
 }
