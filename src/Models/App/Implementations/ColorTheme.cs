@@ -28,7 +28,7 @@ namespace ConsolePages
             WarningColor = ConsoleColor.Yellow;
             ErrorColor = ConsoleColor.Red;
             SuccessColor = ConsoleColor.Green;
-            InformationColor = ConsoleColor.DarkBlue;
+            InformationColor = ConsoleColor.DarkGray;
             InputColor = ConsoleColor.Cyan;
             BGColor = ConsoleColor.Black;
             ListItemColor = ConsoleColor.DarkCyan;
@@ -42,7 +42,7 @@ namespace ConsolePages
             WarningColor = ConsoleColor.Yellow;
             ErrorColor = ConsoleColor.Red;
             SuccessColor = ConsoleColor.Green;
-            InformationColor = ConsoleColor.DarkBlue;
+            InformationColor = ConsoleColor.DarkGray;
             InputColor = ConsoleColor.Cyan;
             BGColor = ConsoleColor.Black;
             ListItemColor = ConsoleColor.DarkCyan;
@@ -55,7 +55,7 @@ namespace ConsolePages
             WarningColor = ConsoleColor.Yellow;
             ErrorColor = ConsoleColor.Red;
             SuccessColor = ConsoleColor.Green;
-            InformationColor = ConsoleColor.DarkBlue;
+            InformationColor = ConsoleColor.DarkGray;
             InputColor = ConsoleColor.Cyan;
             BGColor = ConsoleColor.Black;
             ListItemColor = ConsoleColor.DarkCyan;
@@ -69,7 +69,7 @@ namespace ConsolePages
             WarningColor = warningColor;
             ErrorColor = ConsoleColor.Red;
             SuccessColor = ConsoleColor.Green;
-            InformationColor = ConsoleColor.DarkBlue;
+            InformationColor = ConsoleColor.DarkGray;
             InputColor = ConsoleColor.Cyan;
             BGColor = ConsoleColor.Black;
             ListItemColor = ConsoleColor.DarkCyan;
@@ -83,7 +83,7 @@ namespace ConsolePages
             WarningColor = warningColor;
             ErrorColor = errorColor;
             SuccessColor = ConsoleColor.Green;
-            InformationColor = ConsoleColor.DarkBlue;
+            InformationColor = ConsoleColor.DarkGray;
             InputColor = ConsoleColor.Cyan;
             BGColor = ConsoleColor.Black;
             ListItemColor = ConsoleColor.DarkCyan;
@@ -97,7 +97,7 @@ namespace ConsolePages
             WarningColor = warningColor;
             ErrorColor = errorColor;
             SuccessColor = successColor;
-            InformationColor = ConsoleColor.DarkBlue;
+            InformationColor = ConsoleColor.DarkGray;
             InputColor = ConsoleColor.Cyan;
             BGColor = ConsoleColor.Black;
             ListItemColor = ConsoleColor.DarkCyan;
