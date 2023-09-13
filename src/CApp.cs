@@ -49,6 +49,8 @@ namespace ConsolePages
             _page = new Page(_layout);
             _main_Page = new Page(_layout);
             _theme = _prvt_sttc._dflt_color_theme;
+
+            Console.Title = _title;
         }
 
         public CApp(Page mainPage)
@@ -58,6 +60,8 @@ namespace ConsolePages
             _page = new Page(_layout);
             _main_Page = mainPage;
             _theme = _prvt_sttc._dflt_color_theme;
+
+            Console.Title = _title;
         }
 
         public CApp(Action<DialogStream, CApp> mainPageDialog)
@@ -67,6 +71,8 @@ namespace ConsolePages
             _page = new Page(_layout);
             _main_Page = new Page(_layout, new Action<DialogStream>((a) => mainPageDialog(a, this)));
             _theme = _prvt_sttc._dflt_color_theme;
+
+            Console.Title = _title;
         }
 
         public CApp(Action<DialogStream> mainPageDialog)
@@ -76,6 +82,8 @@ namespace ConsolePages
             _page = new Page(_layout);
             _main_Page = new Page(_layout, mainPageDialog);
             _theme = _prvt_sttc._dflt_color_theme;
+
+            Console.Title = _title;
         }
 
         #endregion
