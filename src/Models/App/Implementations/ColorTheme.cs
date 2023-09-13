@@ -8,6 +8,8 @@ namespace ConsolePages
     public class ColorTheme : IColorTheme
     {
         public ConsoleColor PrimeryColor { get; set; }
+        public ConsoleColor BGColor { get; set; }
+        public ConsoleColor ListItemColor { get; set; }
         public ConsoleColor SecondColor { get; set; }
         public ConsoleColor WarningColor { get; set; }
         public ConsoleColor ErrorColor { get; set; }
@@ -26,8 +28,10 @@ namespace ConsolePages
             WarningColor = ConsoleColor.Yellow;
             ErrorColor = ConsoleColor.Red;
             SuccessColor = ConsoleColor.Green;
-            InformationColor = ConsoleColor.DarkCyan;
+            InformationColor = ConsoleColor.DarkBlue;
             InputColor = ConsoleColor.Cyan;
+            BGColor = ConsoleColor.Black;
+            ListItemColor = ConsoleColor.DarkCyan;
         }
 
 
@@ -40,6 +44,8 @@ namespace ConsolePages
             SuccessColor = ConsoleColor.Green;
             InformationColor = ConsoleColor.DarkBlue;
             InputColor = ConsoleColor.Cyan;
+            BGColor = ConsoleColor.Black;
+            ListItemColor = ConsoleColor.DarkCyan;
 
         }
         public ColorTheme(ConsoleColor primeryColor, ConsoleColor secondColor)
@@ -51,6 +57,8 @@ namespace ConsolePages
             SuccessColor = ConsoleColor.Green;
             InformationColor = ConsoleColor.DarkBlue;
             InputColor = ConsoleColor.Cyan;
+            BGColor = ConsoleColor.Black;
+            ListItemColor = ConsoleColor.DarkCyan;
 
         }
 
@@ -63,6 +71,8 @@ namespace ConsolePages
             SuccessColor = ConsoleColor.Green;
             InformationColor = ConsoleColor.DarkBlue;
             InputColor = ConsoleColor.Cyan;
+            BGColor = ConsoleColor.Black;
+            ListItemColor = ConsoleColor.DarkCyan;
 
         }
 
@@ -75,6 +85,8 @@ namespace ConsolePages
             SuccessColor = ConsoleColor.Green;
             InformationColor = ConsoleColor.DarkBlue;
             InputColor = ConsoleColor.Cyan;
+            BGColor = ConsoleColor.Black;
+            ListItemColor = ConsoleColor.DarkCyan;
 
         }
 
@@ -87,6 +99,8 @@ namespace ConsolePages
             SuccessColor = successColor;
             InformationColor = ConsoleColor.DarkBlue;
             InputColor = ConsoleColor.Cyan;
+            BGColor = ConsoleColor.Black;
+            ListItemColor = ConsoleColor.DarkCyan;
 
         }
 
@@ -99,6 +113,8 @@ namespace ConsolePages
             SuccessColor = successColor;
             InformationColor = infoColor;
             InputColor = ConsoleColor.Cyan;
+            BGColor = ConsoleColor.Black;
+            ListItemColor = ConsoleColor.DarkCyan;
 
         }
 
@@ -111,6 +127,34 @@ namespace ConsolePages
             SuccessColor = successColor;
             InformationColor = infoColor;
             InputColor = inputColor;
+            BGColor = ConsoleColor.Black;
+            ListItemColor = ConsoleColor.DarkCyan;
+        }
+
+        public ColorTheme(ConsoleColor primeryColor, ConsoleColor secondColor, ConsoleColor warningColor, ConsoleColor errorColor, ConsoleColor successColor, ConsoleColor infoColor, ConsoleColor inputColor, ConsoleColor bgColor)
+        {
+            PrimeryColor = primeryColor;
+            SecondColor = secondColor;
+            WarningColor = warningColor;
+            ErrorColor = errorColor;
+            SuccessColor = successColor;
+            InformationColor = infoColor;
+            InputColor = inputColor;
+            BGColor = bgColor;
+            ListItemColor = ConsoleColor.DarkCyan;
+        }
+
+        public ColorTheme(ConsoleColor primeryColor, ConsoleColor secondColor, ConsoleColor warningColor, ConsoleColor errorColor, ConsoleColor successColor, ConsoleColor infoColor, ConsoleColor inputColor, ConsoleColor bgColor, ConsoleColor listItemColor)
+        {
+            PrimeryColor = primeryColor;
+            SecondColor = secondColor;
+            WarningColor = warningColor;
+            ErrorColor = errorColor;
+            SuccessColor = successColor;
+            InformationColor = infoColor;
+            InputColor = inputColor;
+            BGColor = bgColor;
+            ListItemColor = listItemColor;
         }
 
     }
