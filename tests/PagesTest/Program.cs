@@ -1,16 +1,14 @@
 ﻿using ConsolePages;
 
-CApp cApp = new CApp();
-
-Page main = new Page(cApp.Layout);
-
-main.DefineDialog((a) =>
+CApp cApp = new CApp((stream, app) =>
 {
-    a.Print("Wellcome to my Program", "\n", ("  Select Commands : ", a.SecondColor));
+    stream.Print("Wellcome to my Program", "\n", ("  Select Commands : ", stream.SecondColor));
 
-    a.GetCommand(new ConsoleCommand[]
+    stream.GetCommand(new ConsoleCommand[]
     {
-        a.MakeCommand('1', () => SayHelloHandler(cApp), "Say Hello")
+        stream.MakeCommand('1', () => SayHelloHandler(app), "Say Hello"),
+        stream.MakeCommand('2', () => PrintDate(new DialogStream()), "Print Date"),
+        stream.MakeCommand('3', () => Beep(), "Beep")
     });
 
 });
@@ -23,5 +21,15 @@ void SayHelloHandler(CApp c)
     });
 }
 
-cApp.SetMainPage(main);
+void PrintDate(DialogStream a)
+{
+    a.Print(DateTime.Now.ToString("hh:mm:ss"));
+    a.End();
+}
+
+void Beep()
+{
+    Console.Beep(880, 773);
+}
+
 cApp.ShowMainPage(true);
