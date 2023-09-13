@@ -14,8 +14,8 @@ dotnet add package ConsolePages
 ```
 
 ## Release Notes
-- Support more dotnet versions
-- Fix Bugs
+- Fix Bugs of Get Command Component
+- Make syntax better
 
 ## Why develop applications based on terminal ?
 There is no exact answer to this issue, but right now we have a lot of Unix devices in the world and a lot of bad people looking for programs under the terminal. Secondly, a graphical GUI cannot always be the right choice!
