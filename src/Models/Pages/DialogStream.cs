@@ -74,7 +74,7 @@ namespace ConsolePages
             for (int i = 0; i < items.Length; i++)
             {
                 string strValue = string.Empty;
-                ConsoleColor color = _prvt_sttc._theme.PrimeryColor;
+                ConsoleColor color = _prvt_sttc._dflt_color_theme.PrimeryColor;
 
                 var item = items[i];
 

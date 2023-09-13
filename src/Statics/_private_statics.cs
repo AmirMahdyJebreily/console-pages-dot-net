@@ -37,11 +37,6 @@ namespace ConsolePages
         internal static Action _cln_mtd = () => Console.Clear();
 
         /// <summary>
-        /// color theme object
-        /// </summary>
-        internal static IColorTheme _theme = _dflt_color_theme;
-
-        /// <summary>
         /// default layout of pages
         /// </summary>
         internal static AppLayout _dflt_app_cntnt_lyot = new AppLayout();
@@ -60,7 +55,7 @@ namespace ConsolePages
         internal static (string, ConsoleColor) _obj2TCAPPF(object obj)
         {
             string strValue = string.Empty;
-            ConsoleColor color = _theme.PrimeryColor;
+            ConsoleColor color = _dflt_color_theme.PrimeryColor;
 
             var item = obj;
 
