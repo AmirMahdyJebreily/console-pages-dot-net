@@ -38,6 +38,8 @@ namespace ConsolePages
         /// </summary>
         public ColorTheme Theme => _theme;
 
+        public bool Clean { get; set; }
+
         //...
         #endregion
 
@@ -107,7 +109,8 @@ namespace ConsolePages
 
         private void _showLayout(IPage page)
         {
-            _prvt_sttc._cln_mtd();
+            if (Clean)
+                _prvt_sttc._cln_mtd();
             page.ContentLayout.Show();
         }
 
