@@ -11,7 +11,6 @@ namespace ConsolePages
         #region Fields
         private IPage _main_Page;
         private IPage _page;
-        private string _title;
         private AppLayout _layout;
         private ColorTheme _theme;
         //...
@@ -21,7 +20,7 @@ namespace ConsolePages
         /// <summary>
         /// Title of your console app
         /// </summary>
-        public string AppTitle => _title;
+        public string AppTitle { get; set; }
 
         /// <summary>
         /// Your console apps' Pages
@@ -31,7 +30,7 @@ namespace ConsolePages
         /// <summary>
         /// contents layout of the app
         /// </summary>
-        public AppLayout Layout => _layout;
+        public AppLayout Layout { get => _layout; set => _layout = value; }
 
         /// <summary>
         /// color theme of the app
@@ -44,48 +43,48 @@ namespace ConsolePages
         #endregion
 
         #region Constructors
-        public CApp()
+        public CApp(string title = "")
         {
-            _title = Assembly.GetCallingAssembly().GetName().Name;
+            AppTitle = (title == "") ? Assembly.GetCallingAssembly().GetName().Name : title;
             _layout = _prvt_sttc._dflt_app_cntnt_lyot;
             _page = new Page(_layout);
             _main_Page = new Page(_layout);
             _theme = _prvt_sttc._dflt_color_theme;
 
-            Console.Title = _title;
+            Console.Title = AppTitle;
         }
 
-        public CApp(Page mainPage)
+        public CApp(Page mainPage, string title = "")
         {
-            _title = Assembly.GetCallingAssembly().GetName().Name;
+            AppTitle = (title == "") ? Assembly.GetCallingAssembly().GetName().Name : title;
             _layout = _prvt_sttc._dflt_app_cntnt_lyot;
             _page = new Page(_layout);
             _main_Page = mainPage;
             _theme = _prvt_sttc._dflt_color_theme;
 
-            Console.Title = _title;
+            Console.Title = AppTitle;
         }
 
-        public CApp(Action<DialogStream, CApp> mainPageDialog)
+        public CApp(Action<DialogStream, CApp> mainPageDialog, string title = "")
         {
-            _title = Assembly.GetCallingAssembly().GetName().Name;
+            AppTitle = (title == "") ? Assembly.GetCallingAssembly().GetName().Name : title;
             _layout = _prvt_sttc._dflt_app_cntnt_lyot;
             _page = new Page(_layout);
             _main_Page = new Page(_layout, new Action<DialogStream>((a) => mainPageDialog(a, this)));
             _theme = _prvt_sttc._dflt_color_theme;
 
-            Console.Title = _title;
+            Console.Title = AppTitle;
         }
 
-        public CApp(Action<DialogStream> mainPageDialog)
+        public CApp(Action<DialogStream> mainPageDialog, string title = "")
         {
-            _title = Assembly.GetCallingAssembly().GetName().Name;
+            AppTitle = title;
             _layout = _prvt_sttc._dflt_app_cntnt_lyot;
             _page = new Page(_layout);
             _main_Page = new Page(_layout, mainPageDialog);
             _theme = _prvt_sttc._dflt_color_theme;
 
-            Console.Title = _title;
+            Console.Title = AppTitle;
         }
 
         #endregion
