@@ -7,20 +7,20 @@ A lite weight library for create daynamic console applications in dotnet and out
 
 
 
-## Install
+## Install 📦
 you can install latest version of psckage with this command : 
 ```ps
 dotnet add package ConsolePages
 ```
 
-## Release Notes
+## Release Notes 📝
 - Fix Bugs of Get Command Component
 - Make syntax better
 
 ## Why develop applications based on terminal ?
 There is no exact answer to this issue, but right now we have a lot of Unix devices in the world and a lot of bad people looking for programs under the terminal. Secondly, a graphical GUI cannot always be the right choice!
 
-## Why use Console Pages ?
+## Why use Console Pages ? 🖥️
 Creating multipurpose and large programs with many options under the terminal for C# programmers always requires a lot of money and a code sheet full of `Console` words 😁! But that nightmare of busy .CS program is over!
 
  New syntax for make a simple app (see [Tests](https://raw.github.com/AmirMahdyJebreily/console-pages-dot-net/blob/main/tests/PagesTest/Program.cs) To get to know more):
